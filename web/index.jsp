@@ -17,7 +17,7 @@
 
 <form action="${pageContext.request.contextPath}/cambiar-color">
     <label for="color">Seleccione un color: </label>
-    <select name="color" id="color">
+    <select name="color" id="color" >
         <option value="blue">Azul</option>
         <option value="red">Rojo</option>
         <option value="green">Verde</option>
