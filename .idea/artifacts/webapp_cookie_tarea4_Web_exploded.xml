@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="webapp-cookie-tarea4:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/webapp_cookie_tarea4_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="webapp-cookie-tarea4/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="webapp-cookie-tarea4" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
