@@ -41,9 +41,13 @@ public class Carro {
                         .getId()
                         .equals(Long.parseLong(id)))
                 .findAny();
-        if (optionalItemCarro.isPresent()) {
+        int parseInt = Integer.parseInt(cantidad);
+        // Si la cantidad es 0 o menor, se elimina el producto del carro
+        if (parseInt <= 0) {
+            removeItemCarro(id);
+        } else if (optionalItemCarro.isPresent()) {
             ItemCarro i = optionalItemCarro.get();
-            i.setCantidad(Integer.parseInt(cantidad));
+            i.setCantidad(parseInt);
         }
     }
 
