@@ -29,4 +29,11 @@ public class ProductoServiceImpl implements ProductoService {
                         .contains(nombre))
                 .findFirst();
     }
+
+    @Override
+    public Optional<Producto> porId(Long id) {
+        return listar().stream()
+                .filter(p -> p.getId() != null && p.getId().equals(id))
+                .findFirst();
+    }
 }
