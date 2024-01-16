@@ -1,6 +1,5 @@
 package com.svillanueva.tarea5;
 
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,7 +11,7 @@ import java.io.IOException;
 @WebServlet("/guardar-session")
 public class GuardarNombreSessionServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String nombre = req.getParameter("nombre");
 
         HttpSession session = req.getSession();
