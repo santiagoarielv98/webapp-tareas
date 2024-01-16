@@ -5,7 +5,7 @@
       <element id="javaee-facet-resources" facet="webapp-cookie-tarea4/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="webapp-cookie-tarea4" />
+          <element id="module-output" name="webapp-tareas" />
         </element>
       </element>
     </root>
