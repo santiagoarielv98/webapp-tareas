@@ -1,4 +1,4 @@
-package com.svillanueva.servlets.tarea5;
+package com.svillanueva.tarea5;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
