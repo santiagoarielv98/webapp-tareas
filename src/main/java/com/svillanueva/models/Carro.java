@@ -34,4 +34,28 @@ public class Carro {
                 .mapToInt(ItemCarro::getImporte)
                 .sum();
     }
+
+    public void updateItemCarro(String id, String cantidad) {
+        Optional<ItemCarro> optionalItemCarro = items.stream()
+                .filter(i -> i.getProducto()
+                        .getId()
+                        .equals(Long.parseLong(id)))
+                .findAny();
+        if (optionalItemCarro.isPresent()) {
+            ItemCarro i = optionalItemCarro.get();
+            i.setCantidad(Integer.parseInt(cantidad));
+        }
+    }
+
+    public void removeItemCarro(String id) {
+        Optional<ItemCarro> optionalItemCarro = items.stream()
+                .filter(i -> i.getProducto()
+                        .getId()
+                        .equals(Long.parseLong(id)))
+                .findAny();
+        if (optionalItemCarro.isPresent()) {
+            ItemCarro i = optionalItemCarro.get();
+            items.remove(i);
+        }
+    }
 }
