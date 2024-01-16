@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Optional;
 
-@WebServlet({"/tarea-6/login", "/tarea-6/login.html"})
+@WebServlet({"/tarea-6/login"})
 public class LoginServlet extends HttpServlet {
     final static String USERNAME = "admin";
     final static String PASSWORD = "12345";
@@ -34,8 +34,8 @@ public class LoginServlet extends HttpServlet {
                 out.println("</head>");
                 out.println("<body>");
                 out.println("   <h1>Hola " + usernameOptional.get() + " has iniciado sesión con éxito!</h1>");
-                out.println("   <a href=\"index.html\">volver</a>");
-                out.println("   <a href=\"logout\">cerrar sesión</a>");
+                out.println("   <a href=\"index.jsp\">volver</a>");
+                out.println("   <a href=\"logout.jsp\">cerrar sesión</a>");
                 out.println("</body>");
                 out.println("</html>");
             }
@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
 
-            resp.sendRedirect(req.getContextPath() + "/login.html");
+            resp.sendRedirect("login");
         } else {
             resp.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Lo sentimos no esta autorizado para ingresar a esta página!");
         }

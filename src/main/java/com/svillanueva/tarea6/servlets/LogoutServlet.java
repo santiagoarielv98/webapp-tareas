@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet("/tarea-6/logout")
+@WebServlet({"/tarea-6/logout", "/tarea-6/logout.jsp"})
 public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -22,7 +22,7 @@ public class LogoutServlet extends HttpServlet {
             HttpSession session = req.getSession();
             session.invalidate();
         }
-        resp.sendRedirect("login.html");
+        resp.sendRedirect("login.jsp");
     }
 }
 

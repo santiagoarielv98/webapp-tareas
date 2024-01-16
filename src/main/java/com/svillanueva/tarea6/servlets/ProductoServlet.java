@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Optional;
 
-@WebServlet({"/tarea-6/productos.html", "/tarea-6/productos"})
+@WebServlet("/tarea-6/productos")
 public class ProductoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {

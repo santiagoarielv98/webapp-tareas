@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-@WebServlet("/tarea-1/index.html")
+@WebServlet("/tarea-1/index.jsp")
 public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {

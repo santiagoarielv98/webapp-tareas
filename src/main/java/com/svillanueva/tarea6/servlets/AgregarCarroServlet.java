@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet("/agregar-carro")
+@WebServlet("/tarea-6/agregar-carro")
 public class AgregarCarroServlet extends HttpServlet {
 
     @Override
