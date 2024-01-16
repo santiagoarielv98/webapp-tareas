@@ -1,4 +1,4 @@
-package com.svillanueva.servlets;
+package com.svillanueva.servlets.tarea4;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
