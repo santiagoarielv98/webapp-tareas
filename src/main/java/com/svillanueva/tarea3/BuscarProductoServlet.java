@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Optional;
 
-@WebServlet("/buscar-producto")
+@WebServlet("/tarea-3/buscar-producto")
 public class BuscarProductoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {

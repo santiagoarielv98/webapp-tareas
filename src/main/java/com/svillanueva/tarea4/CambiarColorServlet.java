@@ -5,7 +5,7 @@ import jakarta.servlet.http.*;
 
 import java.io.IOException;
 
-@WebServlet("/cambiar-color")
+@WebServlet("/tarea-4/cambiar-color")
 public class CambiarColorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {

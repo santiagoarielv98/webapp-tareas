@@ -15,7 +15,7 @@
 
 <p style="color: ${cookie.color.getValue()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
-<form action="${pageContext.request.contextPath}/cambiar-color">
+<form action="${pageContext.request.contextPath}/tarea-4/cambiar-color">
     <label for="color">Seleccione un color: </label>
     <select name="color" id="color" >
         <option value="blue">Azul</option>

@@ -15,7 +15,7 @@
 <p>Hola <%=session.getAttribute("nombre") != null ? session.getAttribute("nombre") : "anónimo" %> bienvenido a la tarea
     5
 </p>
-<form action="${pageContext.request.contextPath}/guardar-session" method="post">
+<form action="${pageContext.request.contextPath}/tarea-5/guardar-session" method="post">
     <label for="nombre">Nombre:</label>
     <input type="text" name="nombre" id="nombre">
     <input type="submit" value="Enviar">
