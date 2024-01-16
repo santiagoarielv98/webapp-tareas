@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class ItemCarro {
     private int cantidad;
-    private Producto producto;
+    private final Producto producto;
 
     public ItemCarro(int cantidad, Producto producto) {
         this.cantidad = cantidad;
@@ -23,9 +23,6 @@ public class ItemCarro {
         return producto;
     }
 
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
 
     @Override
     public boolean equals(Object o) {

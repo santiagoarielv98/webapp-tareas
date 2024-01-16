@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class Carro {
-    private List<ItemCarro> items;
+    private final List<ItemCarro> items;
 
     public Carro() {
         this.items = new ArrayList<>();
@@ -30,7 +30,7 @@ public class Carro {
     }
 
     public int getTotal() {
-        return items.stream()
+        return getItems().stream()
                 .mapToInt(ItemCarro::getImporte)
                 .sum();
     }
