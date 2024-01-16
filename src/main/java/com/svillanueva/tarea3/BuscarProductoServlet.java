@@ -23,23 +23,28 @@ public class BuscarProductoServlet extends HttpServlet {
         Optional<Producto> encontrado = service.buscarProducto(nombre);
 
         if (encontrado.isPresent()) {
+            Producto producto = encontrado.get();
             resp.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = resp.getWriter()) {
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("    <head>");
-                out.println("        <meta charset=\"UTF-8\">");
                 out.println("        <title>Producto encontrado</title>");
                 out.println("    </head>");
                 out.println("    <body>");
                 out.println("        <h1>Producto encontrado!</h1>");
-                out.println("        <h3>Producto encontrado " + encontrado.get().getNombre() +
-                        " el precio $" + encontrado.get().getPrecio() + "</h3>");
+                out.println("        <h3>Producto encontrado: " +
+                        producto.getId() + ". " +
+                        producto
+                                .getNombre() +
+                        " el precio $" + producto
+                        .getPrecio() + " de la categoría " + producto
+                        .getTipo() + "</h3>");
                 out.println("    </body>");
                 out.println("</html>");
             }
         } else {
-            resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Lo sentimos no se encontró el producto " + nombre);
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Lo sentimos no se encontró el producto '" + nombre + "'");
         }
     }
 }

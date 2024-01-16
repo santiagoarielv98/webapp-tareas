@@ -7,6 +7,7 @@ import java.util.*;
 public interface ProductoService {
 
     List<Producto> listar();
+
     Optional<Producto> buscarProducto(String nombre);
 
 }
