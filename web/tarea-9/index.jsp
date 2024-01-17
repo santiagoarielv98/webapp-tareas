@@ -18,7 +18,7 @@
 </head>
 <body>
 <h1>Tarea 9: Listado de cursos</h1>
-<form action="${pageContext.request.contextPath}/tarea-9/buscar">
+<form action="${pageContext.request.contextPath}/tarea-9/buscar" method="post">
     <label for="nombre">
         <input type="text" name="nombre" id="nombre">
         <input type="submit" value="Buscar">
