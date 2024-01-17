@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
-    private Connection conn;
+    private final Connection conn;
 
     public ProductoRepositoryJdbcImpl(Connection conn) {
         this.conn = conn;
