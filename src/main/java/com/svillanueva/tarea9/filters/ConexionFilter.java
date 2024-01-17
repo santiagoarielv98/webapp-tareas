@@ -1,22 +1,20 @@
-package com.svillanueva.filters;
+package com.svillanueva.tarea9.filters;
 
-import com.svillanueva.util.ConexionDB;
-import jakarta.servlet.Filter;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
+import com.svillanueva.tarea9.models.ConexionBaseDatos;
+import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@WebFilter("/tarea-2/*")
+@WebFilter("/tarea-9/*")
 public class ConexionFilter implements Filter {
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException {
-        try (Connection conn = ConexionDB.getConnection()) {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        try (Connection conn = ConexionBaseDatos.getConnection()) {
             if (conn.getAutoCommit()) {
                 conn.setAutoCommit(false);
             }
@@ -24,12 +22,15 @@ public class ConexionFilter implements Filter {
                 request.setAttribute("conn", conn);
                 chain.doFilter(request, response);
                 conn.commit();
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 conn.rollback();
-                ((HttpServletResponse) response).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error en la base de datos");
+                ((HttpServletResponse) response).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
+                throw new RuntimeException(e);
             }
         } catch (SQLException e) {
+
             throw new RuntimeException(e);
         }
+
     }
 }
