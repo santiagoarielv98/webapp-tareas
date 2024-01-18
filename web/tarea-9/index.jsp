@@ -28,6 +28,7 @@
     <tr>
         <td>id</td>
         <td>nombre</td>
+        <td>descripcion</td>
         <td>instructor</td>
         <td>duracion</td>
     </tr>
@@ -36,6 +37,8 @@
         <td><%= curso.getId() %>
         </td>
         <td><%= curso.getNombre() %>
+        </td>
+        <td><%= curso.getDescripcion() %>
         </td>
         <td><%= curso.getInstructor() %>
         </td>

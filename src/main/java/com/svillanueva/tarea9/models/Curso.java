@@ -3,20 +3,13 @@ package com.svillanueva.tarea9.models;
 public class Curso {
     private Long id;
     private String nombre;
-//    private String descripcion;
+    private String descripcion;
     private String instructor;
     private Double duracion;
 
     public Curso() {
     }
 
-//    public Curso(Long id, String nombre, String descripcion, String instructor, Double duracion) {
-//        this.id = id;
-//        this.nombre = nombre;
-//        this.descripcion = descripcion;
-//        this.instructor = instructor;
-//        this.duracion = duracion;
-//    }
 
     public Long getId() {
         return id;
@@ -34,13 +27,13 @@ public class Curso {
         this.nombre = nombre;
     }
 
-//    public String getDescripcion() {
-//        return descripcion;
-//    }
+    public String getDescripcion() {
+        return descripcion;
+    }
 
-//    public void setDescripcion(String descripcion) {
-//        this.descripcion = descripcion;
-//    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public String getInstructor() {
         return instructor;
