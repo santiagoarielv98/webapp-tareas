@@ -1,7 +1,6 @@
 package com.svillanueva.tarea9.repositories;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface Repository<T> {
     List<T> listar();
