@@ -1,5 +1,6 @@
 package com.svillanueva.repositories;
 
+import com.svillanueva.models.Categoria;
 import com.svillanueva.models.Producto;
 
 import java.sql.*;
@@ -34,7 +35,14 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
         p.setId(resultSet.getLong("id"));
         p.setNombre(resultSet.getString("nombre"));
         p.setPrecio(resultSet.getInt("precio"));
-        p.setTipo(resultSet.getString("categoria"));
+        p.setSku(resultSet.getString("sku"));
+        p.setFechaRegistro(resultSet.getDate("fecha_registro")
+                .toLocalDate());
+        Categoria c = new Categoria();
+        c.setId(resultSet.getLong("categoria_id"));
+        c.setNombre(resultSet.getString("categoria"));
+        p.setCategoria(c);
+
         return p;
     }
 
@@ -57,11 +65,41 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
 
     @Override
     public void guardar(Producto producto) throws SQLException {
+        String sql;
+        boolean isUpdate = producto.getId() != null && producto.getId() > 0;
+
+        if (isUpdate) {
+            sql = " UPDATE productos SET nombre=?, precio=?, sku=?, categoria_id=? where id=?";
+
+        } else {
+            sql = "INSERT INTO productos (nombre, precio, sku, categoria_id, fecha_registro)" +
+                    "VALUES(?,?,?,?,?,?)";
+        }
+
+        try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setString(1, producto.getNombre());
+            preparedStatement.setInt(2, producto.getPrecio());
+            preparedStatement.setString(1, producto.getSku());
+            preparedStatement.setLong(1, producto.getCategoria()
+                    .getId());
+            if (isUpdate) {
+                preparedStatement.setLong(5, producto.getId());
+            } else {
+                preparedStatement.setDate(5, Date.valueOf(producto.getFechaRegistro()));
+            }
+
+            preparedStatement.executeUpdate();
+        }
 
     }
 
     @Override
-    public void eliminar(Integer id) throws SQLException {
+    public void eliminar(Long id) throws SQLException {
+        String sql = "DELETE FROM productos WHERE id=?";
+        try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setLong(1, id);
+            preparedStatement.executeUpdate();
+        }
 
     }
 }

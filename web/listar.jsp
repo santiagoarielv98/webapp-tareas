@@ -46,7 +46,7 @@
         </td>
         <td><%= p.getNombre() %>
         </td>
-        <td><%= p.getTipo() %>
+        <td><%= p.getCategoria().getNombre() %>
         </td>
 
         <% if (username.isPresent()) { %>

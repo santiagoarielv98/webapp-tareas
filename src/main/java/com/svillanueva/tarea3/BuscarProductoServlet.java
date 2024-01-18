@@ -39,7 +39,7 @@ public class BuscarProductoServlet extends HttpServlet {
                                 .getNombre() +
                         " el precio $" + producto
                         .getPrecio() + " de la categoría " + producto
-                        .getTipo() + "</h3>");
+                        .getCategoria() + "</h3>");
                 out.println("    </body>");
                 out.println("</html>");
             }
