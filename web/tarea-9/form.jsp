@@ -15,7 +15,7 @@
     @SuppressWarnings("unchecked")
     Map<String, String> errores = (Map<String, String>) request.getAttribute("errores");
 
-    String titulo = "Crear";
+    String titulo = curso.getId() != null || curso.getId() == 0 ? "Editar" : "Crear";
 %>
 
 <html>
