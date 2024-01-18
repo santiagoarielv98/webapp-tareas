@@ -13,7 +13,8 @@
 <%
     @SuppressWarnings("unchecked")
     List<Producto> listaProducto = (List<Producto>) request.getAttribute("listaProducto");
-    Optional<String> username = Optional.ofNullable((String) request.getSession().getAttribute("username"));
+    Optional<String> username = Optional.of("santiago");
+    //Optional.ofNullable((String) request.getSession().getAttribute("username"));
 
 %>
 <!DOCTYPE html>
@@ -24,20 +25,17 @@
 <body>
 <h1>¡Listado de Productos!</h1>
 
-<% if (username.isPresent()) { %>
 <div>Hola, <%=username.get()%> bienvenido</div>
-<% } %>
+<a href="${pageContext.request.contextPath}/producto/form">Crear [+] </a>
 
 <table>
     <tr>
         <th>id</th>
         <th>nombre</th>
         <th>tipo</th>
-
-        <% if (username.isPresent()) { %>
         <th>precio</th>
         <th>agregar</th>
-        <% } %>
+        <th>editar</th>
 
     </tr>
     <% for (Producto p : listaProducto) { %>
@@ -46,17 +44,16 @@
         </td>
         <td><%= p.getNombre() %>
         </td>
-        <td><%= p.getCategoria().getNombre() %>
+        <td><%= p.getCategoria()
+                .getNombre() %>
         </td>
 
-        <% if (username.isPresent()) { %>
         <td><%= p.getPrecio() %>
         </td>
         <td><a href="${pageContext.request.contextPath}/tarea-6/agregar-carro<%= "?id=" + p.getId() %>">agregar al
             carro</a>
         </td>
-        <% } %>
-
+        <td><a href="${pageContext.request.contextPath}/producto/form<%= "?id=" + p.getId() %>">editar</a>
     </tr>
     <% } %>
 

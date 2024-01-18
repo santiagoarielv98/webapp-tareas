@@ -73,14 +73,14 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
 
         } else {
             sql = "INSERT INTO productos (nombre, precio, sku, categoria_id, fecha_registro)" +
-                    "VALUES(?,?,?,?,?,?)";
+                    "VALUES(?,?,?,?,?)";
         }
 
         try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
             preparedStatement.setString(1, producto.getNombre());
             preparedStatement.setInt(2, producto.getPrecio());
-            preparedStatement.setString(1, producto.getSku());
-            preparedStatement.setLong(1, producto.getCategoria()
+            preparedStatement.setString(3, producto.getSku());
+            preparedStatement.setLong(4, producto.getCategoria()
                     .getId());
             if (isUpdate) {
                 preparedStatement.setLong(5, producto.getId());
