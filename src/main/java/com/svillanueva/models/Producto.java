@@ -1,7 +1,6 @@
 package com.svillanueva.models;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Producto {
     private Long id;
