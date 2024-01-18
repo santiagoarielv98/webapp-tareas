@@ -9,7 +9,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%
-    long id = (long) request.getAttribute("id");
 
     Curso curso = (Curso) request.getAttribute("curso");
 
@@ -27,7 +26,7 @@
 <h1>Tarea 10: <%=titulo%> curso</h1>
 <a href="${pageContext.request.contextPath}/tarea-9/index">volver</a>
 <form action="${pageContext.request.contextPath}/tarea-9/crear" method="post">
-    <input type="hidden" name="id" value="<%=id%>">
+    <input type="hidden" name="id" value="<%=curso.getId()%>">
     <div>
         <label for="nombre">Nombre</label>
         <div>

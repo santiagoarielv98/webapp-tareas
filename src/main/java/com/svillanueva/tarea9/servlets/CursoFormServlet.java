@@ -47,8 +47,6 @@ public class CursoFormServlet extends HttpServlet {
         } catch (NumberFormatException e) {
             id = 0L;
         }
-        System.out.println("id: " + id);
-
         req.setAttribute("curso", c);
         req.setAttribute("id", id);
         req.getRequestDispatcher("form.jsp")
@@ -92,19 +90,20 @@ public class CursoFormServlet extends HttpServlet {
             errores.put("descripcion", "la descripcion es requerida");
         }
 
+        Curso c = new Curso();
+        c.setId(id);
+        c.setNombre(nombre);
+        c.setInstructor(instructor);
+        c.setDuracion(duracion);
+        c.setDescripcion(descripcion);
+
         if (errores.isEmpty()) {
-            Curso c = new Curso();
-            c.setId(id);
-            c.setNombre(nombre);
-            c.setInstructor(instructor);
-            c.setDuracion(duracion);
-            c.setDescripcion(descripcion);
             cursoService.guardar(c);
             resp.sendRedirect(req.getContextPath() + "/tarea-9/index");
         } else {
-            System.out.println("entra en el else");
+            req.setAttribute("curso", c);
             req.setAttribute("errores", errores);
-            req.getRequestDispatcher(req.getContextPath() + "/tarea-9/crear")
+            req.getRequestDispatcher("/tarea-9/form.jsp")
                     .forward(req, resp);
         }
 
