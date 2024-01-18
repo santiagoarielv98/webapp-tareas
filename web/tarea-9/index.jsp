@@ -18,6 +18,7 @@
 </head>
 <body>
 <h1>Tarea 9: Listado de cursos</h1>
+<a href="${pageContext.request.contextPath}/tarea-9/crear">Crear [+]</a>
 <form action="${pageContext.request.contextPath}/tarea-9/buscar" method="post">
     <label for="nombre">
         <input type="text" name="nombre" id="nombre">
@@ -31,6 +32,8 @@
         <td>descripcion</td>
         <td>instructor</td>
         <td>duracion</td>
+        <td>editar</td>
+        <td>eliminar</td>
     </tr>
         <% for (Curso curso : listaCursos) { %>
     <tr>
@@ -43,6 +46,12 @@
         <td><%= curso.getInstructor() %>
         </td>
         <td><%= curso.getDuracion() %>
+        </td>
+        <td>
+            <a href="${pageContext.request.contextPath}/tarea-9/crear<%= "?id=" + curso.getId()%>">Editar</a>
+        </td>
+        <td>
+            <a onclick="return confirm('Desear elminar el Curso?');" href="${pageContext.request.contextPath}/tarea-9/eliminar<%= "?id=" + curso.getId()%>">Eliminar</a>
         </td>
     </tr>
         <% } %>

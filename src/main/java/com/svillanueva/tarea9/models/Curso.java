@@ -10,7 +10,6 @@ public class Curso {
     public Curso() {
     }
 
-
     public Long getId() {
         return id;
     }
