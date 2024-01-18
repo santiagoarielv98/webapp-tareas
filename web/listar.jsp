@@ -1,6 +1,3 @@
-<%@ page import="com.svillanueva.models.Producto" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Optional" %>
 <%--
   Created by IntelliJ IDEA.
   User: santi
@@ -9,14 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-
-<%
-    @SuppressWarnings("unchecked")
-    List<Producto> listaProducto = (List<Producto>) request.getAttribute("listaProducto");
-    Optional<String> username = Optional.of("santiago");
-    //Optional.ofNullable((String) request.getSession().getAttribute("username"));
-
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,9 +15,8 @@
 <body>
 <h1>¡Listado de Productos!</h1>
 
-<div>Hola, <%=username.get()%> bienvenido</div>
+<div>Hola, ${requestScope.username.get()} bienvenido</div>
 <a href="${pageContext.request.contextPath}/producto/form">Crear [+] </a>
-
 <table>
     <tr>
         <th>id</th>
@@ -38,29 +27,32 @@
         <th>editar</th>
         <th>eliminar</th>
     </tr>
-    <% for (Producto p : listaProducto) { %>
-    <tr>
-        <td><%= p.getId() %>
-        </td>
-        <td><%= p.getNombre() %>
-        </td>
-        <td><%= p.getCategoria()
-                .getNombre() %>
-        </td>
-
-        <td><%= p.getPrecio() %>
-        </td>
-        <td><a href="${pageContext.request.contextPath}/tarea-6/agregar-carro<%= "?id=" + p.getId() %>">agregar al
-            carro</a>
-        </td>
-        <td><a href="${pageContext.request.contextPath}/producto/form<%= "?id=" + p.getId() %>">editar</a>
-        <td><a onclick="return confirm('Deseas Eliminar este producto');"
-               href="${pageContext.request.contextPath}/producto/eliminar<%= "?id=" + p.getId() %>">eliminar</a>
-    </tr>
-    <% } %>
-
+    <c:forEach items="${requestScope.listaProducto}" var="p">
+        <tr>
+            <td>
+                    ${p.id}
+            </td>
+            <td>
+                    ${p.nombre}
+            </td>
+            <td>
+                    ${p.categoria.nombre}
+            </td>
+            <td>
+                    ${p.precio}
+            </td>
+            <td>
+                <a href="${pageContext.request.contextPath}/tarea-6/agregar-carro${p.getId()}">
+                    agregar al carro
+                </a>
+            </td>
+            <td>
+                <a href="${pageContext.request.contextPath}/producto/form${"?id="+p.getId()}">editar</a>
+            <td>
+                <a onclick="return confirm('Deseas Eliminar este producto');"
+                   href="${pageContext.request.contextPath}/producto/eliminar${"?id="+p.getId()}">eliminar</a>
+        </tr>
+    </c:forEach>
 </table>
-
-
 </body>
 </html>

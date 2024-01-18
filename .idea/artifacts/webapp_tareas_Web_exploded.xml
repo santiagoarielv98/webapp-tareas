@@ -8,6 +8,7 @@
           <element id="module-output" name="webapp-tareas" />
         </element>
       </element>
+      <element id="library" level="project" name="Maven: org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1" />
     </root>
   </artifact>
 </component>
