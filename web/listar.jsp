@@ -36,7 +36,7 @@
         <th>precio</th>
         <th>agregar</th>
         <th>editar</th>
-
+        <th>eliminar</th>
     </tr>
     <% for (Producto p : listaProducto) { %>
     <tr>
@@ -54,6 +54,8 @@
             carro</a>
         </td>
         <td><a href="${pageContext.request.contextPath}/producto/form<%= "?id=" + p.getId() %>">editar</a>
+        <td><a onclick="return confirm('Deseas Eliminar este producto');"
+               href="${pageContext.request.contextPath}/producto/eliminar<%= "?id=" + p.getId() %>">eliminar</a>
     </tr>
     <% } %>
 
