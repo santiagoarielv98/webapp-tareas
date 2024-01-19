@@ -1,5 +1,8 @@
 package com.svillanueva.tarea6.servlets;
 
+import com.svillanueva.models.Usuario;
+import com.svillanueva.services.UsuarioService;
+import com.svillanueva.services.UsuarioServiceImpl;
 import com.svillanueva.tarea6.services.LoginService;
 import com.svillanueva.tarea6.services.LoginServiceSessionImpl;
 import jakarta.servlet.ServletException;
@@ -11,12 +14,12 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Optional;
 
 @WebServlet({"/tarea-6/login"})
 public class LoginServlet extends HttpServlet {
-    final static String USERNAME = "admin";
-    final static String PASSWORD = "12345";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,7 +53,18 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        if (USERNAME.equals(username) && PASSWORD.equals(password)) {
+        Connection conn = (Connection) req.getServletContext()
+                .getAttribute("conn");
+
+        UsuarioService usuarioService = new UsuarioServiceImpl(conn);
+        Optional<Usuario> usuarioOptional;
+        try {
+            usuarioOptional = usuarioService.login(username, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        if (usuarioOptional.isPresent()) {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
 
