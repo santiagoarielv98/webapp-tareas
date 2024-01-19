@@ -42,7 +42,7 @@
                     ${p.precio}
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/tarea-6/agregar-carro${p.getId()}">
+                <a href="${pageContext.request.contextPath}/tarea-6/agregar-carro${"?id="}${p.getId()}">
                     agregar al carro
                 </a>
             </td>
