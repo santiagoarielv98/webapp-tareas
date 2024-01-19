@@ -15,7 +15,7 @@
 <body>
 <h1>¡Listado de Productos!</h1>
 
-<div>Hola, ${requestScope.username.get()} bienvenido</div>
+<div>Hola, Santiago bienvenido</div>
 <a href="${pageContext.request.contextPath}/producto/form">Crear [+] </a>
 <table>
     <tr>
@@ -47,10 +47,10 @@
                 </a>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/producto/form${"?id="+p.getId()}">editar</a>
+                <a href="${pageContext.request.contextPath}/producto/form${"?id="}${p.getId()}">editar</a>
             <td>
                 <a onclick="return confirm('Deseas Eliminar este producto');"
-                   href="${pageContext.request.contextPath}/producto/eliminar${"?id="+p.getId()}">eliminar</a>
+                   href="${pageContext.request.contextPath}/producto/eliminar${"?id="}${p.getId()}">eliminar</a>
         </tr>
     </c:forEach>
 </table>

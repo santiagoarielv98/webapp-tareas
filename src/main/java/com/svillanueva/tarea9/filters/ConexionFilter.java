@@ -26,7 +26,7 @@ public class ConexionFilter implements Filter {
                 ((HttpServletResponse) response).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
                 throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
 
             throw new RuntimeException(e);
         }
