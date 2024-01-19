@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class Carro {
-    private List<ItemCarro> items;
+    private final List<ItemCarro> items;
 
     public Carro() {
         this.items = new ArrayList<>();
@@ -18,18 +18,21 @@ public class Carro {
                     .findAny();
             if (optionalItemCarro.isPresent()) {
                 ItemCarro i = optionalItemCarro.get();
-                i.setCantidad(i.getCantidad()+1);
+                i.setCantidad(i.getCantidad() + 1);
             }
         } else {
             this.items.add(itemCarro);
         }
     }
+
     public List<ItemCarro> getItems() {
         return items;
     }
 
     public int getTotal() {
-        return items.stream().mapToInt(ItemCarro::getImporte).sum();
+        return items.stream()
+                .mapToInt(ItemCarro::getImporte)
+                .sum();
     }
 
     public void removeProductos(List<String> productoIds) {
@@ -42,7 +45,7 @@ public class Carro {
 
     public void removeProducto(String productoId) {
         Optional<ItemCarro> producto = findProducto(productoId);
-        producto.ifPresent(itemCarro -> items.remove(itemCarro));
+        producto.ifPresent(items::remove);
     }
 
     public void updateCantidad(String productoId, int cantidad) {
@@ -51,8 +54,9 @@ public class Carro {
     }
 
     private Optional<ItemCarro> findProducto(String productoId) {
-        return  items.stream()
-                .filter(itemCarro -> productoId.equals(Long.toString(itemCarro.getProducto().getId())))
+        return items.stream()
+                .filter(itemCarro -> productoId.equals(Long.toString(itemCarro.getProducto()
+                        .getId())))
                 .findAny();
     }
 }

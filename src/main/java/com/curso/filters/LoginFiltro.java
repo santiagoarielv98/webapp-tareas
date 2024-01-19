@@ -1,16 +1,16 @@
 package com.curso.filters;
 
+import com.curso.services.LoginService;
+import com.curso.services.LoginServiceSessionImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import com.curso.services.LoginService;
-import com.curso.services.LoginServiceSessionImpl;
 
 import java.io.IOException;
 import java.util.Optional;
 
-@WebFilter({"/carro/*", "/productos/form/*", "/productos/eliminar/*"})
+@WebFilter({"/carro/*", "/curso/productos/form/*", "/curso/productos/eliminar/*"})
 public class LoginFiltro implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -19,7 +19,7 @@ public class LoginFiltro implements Filter {
         if (username.isPresent()) {
             chain.doFilter(request, response);
         } else {
-            ((HttpServletResponse)response).sendError(HttpServletResponse.SC_UNAUTHORIZED,
+            ((HttpServletResponse) response).sendError(HttpServletResponse.SC_UNAUTHORIZED,
                     "Lo sentimos no estas autorizado para ingresar a esta pagina!");
         }
     }

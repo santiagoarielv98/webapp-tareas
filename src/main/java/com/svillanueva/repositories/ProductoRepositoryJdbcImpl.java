@@ -30,7 +30,7 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
         return productos;
     }
 
-    private static Producto getProducto(ResultSet resultSet) throws SQLException {
+    public static Producto getProducto(ResultSet resultSet) throws SQLException {
         Producto p = new Producto();
         p.setId(resultSet.getLong("id"));
         p.setNombre(resultSet.getString("nombre"));

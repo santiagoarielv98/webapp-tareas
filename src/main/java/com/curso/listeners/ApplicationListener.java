@@ -1,35 +1,38 @@
 package com.curso.listeners;
 
+import com.curso.models.Carro;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebListener;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.HttpSessionEvent;
 import jakarta.servlet.http.HttpSessionListener;
-import com.curso.models.Carro;
 
 @WebListener
-public class AplicacionListener implements ServletContextListener,
+public class ApplicationListener implements ServletContextListener,
         ServletRequestListener, HttpSessionListener {
 
     private ServletContext servletContext;
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        sce.getServletContext().log("inicializando la aplicacion!");
+        sce.getServletContext()
+                .log("inicializando la aplicación!");
         servletContext = sce.getServletContext();
-        servletContext.setAttribute("mensaje", "algun valor global de la app!");
+        servletContext.setAttribute("mensaje", "algún valor global de la app!");
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        servletContext.log("destruyendo la aplicacion!");
+        servletContext.log("destruyendo la aplicación!");
     }
 
     @Override
     public void requestInitialized(ServletRequestEvent sre) {
         servletContext.log("inicializando el request!");
-        sre.getServletRequest().setAttribute("mensaje", "guardando algun valor para el request");
-        sre.getServletRequest().setAttribute("title", "Catalogo Servlet");
+        sre.getServletRequest()
+                .setAttribute("mensaje", "guardando algún valor para el request");
+        sre.getServletRequest()
+                .setAttribute("title", "Catalogo Servlet");
     }
 
     @Override
@@ -39,7 +42,7 @@ public class AplicacionListener implements ServletContextListener,
 
     @Override
     public void sessionCreated(HttpSessionEvent se) {
-        servletContext.log("inicializando la sesion http");
+        servletContext.log("inicializando la sesión http");
         Carro carro = new Carro();
         HttpSession session = se.getSession();
         session.setAttribute("carro", carro);
@@ -47,6 +50,6 @@ public class AplicacionListener implements ServletContextListener,
 
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
-        servletContext.log("destruyendo la sesion http");
+        servletContext.log("destruyendo la sesión http");
     }
 }

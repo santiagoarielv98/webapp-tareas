@@ -6,8 +6,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoriaRepositoryImpl implements Repository<Categoria>{
-    private Connection conn;
+public class CategoriaRepositoryImpl implements Repository<Categoria> {
+    private final Connection conn;
 
     public CategoriaRepositoryImpl(Connection conn) {
         this.conn = conn;
@@ -16,8 +16,8 @@ public class CategoriaRepositoryImpl implements Repository<Categoria>{
     @Override
     public List<Categoria> listar() throws SQLException {
         List<Categoria> categorias = new ArrayList<>();
-        try(Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from categorias")){
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("select * from categorias")) {
             while (rs.next()) {
                 Categoria categoria = getCategoria(rs);
                 categorias.add(categoria);

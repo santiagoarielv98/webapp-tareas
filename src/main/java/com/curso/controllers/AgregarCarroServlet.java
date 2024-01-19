@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.Optional;
 
-@WebServlet("/carro/agregar")
+@WebServlet("/curso/carro/agregar")
 public class AgregarCarroServlet extends HttpServlet {
 
     @Override
@@ -31,6 +31,6 @@ public class AgregarCarroServlet extends HttpServlet {
             Carro carro = (Carro) session.getAttribute("carro");
             carro.addItemCarro(item);
         }
-        resp.sendRedirect(req.getContextPath() + "/carro/ver");
+        resp.sendRedirect(req.getContextPath() + "/curso/carro/ver");
     }
 }

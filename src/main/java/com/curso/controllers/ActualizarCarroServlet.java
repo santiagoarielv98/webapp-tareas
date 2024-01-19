@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
 
-@WebServlet("/carro/actualizar")
+@WebServlet("/curso/carro/actualizar")
 public class ActualizarCarroServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,7 +24,7 @@ public class ActualizarCarroServlet extends HttpServlet {
             updateCantidades(req, carro);
         }
 
-        resp.sendRedirect(req.getContextPath() + "/carro/ver");
+        resp.sendRedirect(req.getContextPath() + "/curso/carro/ver");
     }
 
     private void updateProductos(HttpServletRequest request, Carro carro) {

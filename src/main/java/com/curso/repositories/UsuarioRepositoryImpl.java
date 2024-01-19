@@ -8,8 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UsuarioRepositoryImpl implements UsuarioRepository{
-    private Connection conn;
+public class UsuarioRepositoryImpl implements UsuarioRepository {
+    private final Connection conn;
 
     public UsuarioRepositoryImpl(Connection conn) {
         this.conn = conn;

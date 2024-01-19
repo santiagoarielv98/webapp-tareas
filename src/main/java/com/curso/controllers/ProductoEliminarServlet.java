@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.Optional;
 
-@WebServlet("/productos/eliminar")
+@WebServlet("/curso/productos/eliminar")
 public class ProductoEliminarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +25,7 @@ public class ProductoEliminarServlet extends HttpServlet {
             Optional<Producto> o = service.porId(id);
             if (o.isPresent()) {
                 service.eliminar(id);
-                resp.sendRedirect(req.getContextPath() + "/productos");
+                resp.sendRedirect(req.getContextPath() + "/curso/productos");
             } else {
                 resp.sendError(HttpServletResponse.SC_NOT_FOUND, "No existe el producto en la base de datos!");
             }

@@ -11,9 +11,9 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-public class ProductoServiceJdbcImpl implements ProductoService{
-    private Repository<Producto> repositoryJdbc;
-    private Repository<Categoria> repositoryCategoriaJdbc;
+public class ProductoServiceJdbcImpl implements ProductoService {
+    private final Repository<Producto> repositoryJdbc;
+    private final Repository<Categoria> repositoryCategoriaJdbc;
 
     public ProductoServiceJdbcImpl(Connection connection) {
         this.repositoryJdbc = new ProductoRepositoryJdbcImpl(connection);
@@ -24,8 +24,8 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public List<Producto> listar() {
         try {
             return repositoryJdbc.listar();
-        } catch (SQLException throwables) {
-            throw new ServiceJdbcException(throwables.getMessage(), throwables.getCause());
+        } catch (SQLException throwable) {
+            throw new ServiceJdbcException(throwable.getMessage(), throwable.getCause());
         }
     }
 
@@ -33,8 +33,8 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public Optional<Producto> porId(Long id) {
         try {
             return Optional.ofNullable(repositoryJdbc.porId(id));
-        } catch (SQLException throwables) {
-            throw new ServiceJdbcException(throwables.getMessage(), throwables.getCause());
+        } catch (SQLException throwable) {
+            throw new ServiceJdbcException(throwable.getMessage(), throwable.getCause());
 
         }
     }
@@ -43,8 +43,8 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public void guardar(Producto producto) {
         try {
             repositoryJdbc.guardar(producto);
-        } catch (SQLException throwables) {
-            throw new ServiceJdbcException(throwables.getMessage(), throwables.getCause());
+        } catch (SQLException throwable) {
+            throw new ServiceJdbcException(throwable.getMessage(), throwable.getCause());
         }
     }
 
@@ -52,8 +52,8 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public void eliminar(Long id) {
         try {
             repositoryJdbc.eliminar(id);
-        } catch (SQLException throwables) {
-            throw new ServiceJdbcException(throwables.getMessage(), throwables.getCause());
+        } catch (SQLException throwable) {
+            throw new ServiceJdbcException(throwable.getMessage(), throwable.getCause());
         }
     }
 
@@ -61,8 +61,8 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public List<Categoria> listarCategoria() {
         try {
             return repositoryCategoriaJdbc.listar();
-        } catch (SQLException throwables) {
-            throw new ServiceJdbcException(throwables.getMessage(), throwables.getCause());
+        } catch (SQLException throwable) {
+            throw new ServiceJdbcException(throwable.getMessage(), throwable.getCause());
         }
     }
 
@@ -70,8 +70,8 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public Optional<Categoria> porIdCategoria(Long id) {
         try {
             return Optional.ofNullable(repositoryCategoriaJdbc.porId(id));
-        } catch (SQLException throwables) {
-            throw new ServiceJdbcException(throwables.getMessage(), throwables.getCause());
+        } catch (SQLException throwable) {
+            throw new ServiceJdbcException(throwable.getMessage(), throwable.getCause());
         }
     }
 }

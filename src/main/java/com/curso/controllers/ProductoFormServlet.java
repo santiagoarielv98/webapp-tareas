@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@WebServlet("/productos/form")
+@WebServlet("/curso/productos/form")
 public class ProductoFormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,7 +39,7 @@ public class ProductoFormServlet extends HttpServlet {
         req.setAttribute("producto", producto);
         req.setAttribute("title", req.getAttribute("title") + ": Formulario de productos");
 
-        getServletContext().getRequestDispatcher("/form.jsp")
+        getServletContext().getRequestDispatcher("/curso/form.jsp")
                 .forward(req, resp);
     }
 
@@ -125,13 +125,13 @@ public class ProductoFormServlet extends HttpServlet {
 
         if (errores.isEmpty()) {
             service.guardar(producto);
-            resp.sendRedirect(req.getContextPath() + "/productos");
+            resp.sendRedirect(req.getContextPath() + "/curso/productos");
         } else {
             req.setAttribute("errores", errores);
             req.setAttribute("categorias", service.listarCategoria());
             req.setAttribute("producto", producto);
             req.setAttribute("title", req.getAttribute("title") + ": Formulario de productos");
-            getServletContext().getRequestDispatcher("/form.jsp")
+            getServletContext().getRequestDispatcher("/curso/form.jsp")
                     .forward(req, resp);
         }
     }

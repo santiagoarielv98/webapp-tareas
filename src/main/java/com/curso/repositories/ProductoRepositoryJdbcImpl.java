@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
-    private Connection conn;
+    private final Connection conn;
 
     public ProductoRepositoryJdbcImpl(Connection conn) {
         this.conn = conn;
@@ -20,7 +20,7 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
 
         try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT p.*, c.nombre as categoria FROM productos as p " +
-                     " inner join categorias as c ON (p.categoria_id = c.id) order by p.id ASC")) {
+                     " inner join categorias as c ON (p.categoria_id = c.id) order by p.id")) {
             while (rs.next()) {
                 Producto p = getProducto(rs);
                 productos.add(p);
@@ -58,7 +58,8 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
             stmt.setString(1, producto.getNombre());
             stmt.setInt(2, producto.getPrecio());
             stmt.setString(3, producto.getSku());
-            stmt.setLong(4, producto.getCategoria().getId());
+            stmt.setLong(4, producto.getCategoria()
+                    .getId());
 
             if (producto.getId() != null && producto.getId() > 0) {
                 stmt.setLong(5, producto.getId());
@@ -84,7 +85,8 @@ public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
         p.setNombre(rs.getString("nombre"));
         p.setPrecio(rs.getInt("precio"));
         p.setSku(rs.getString("sku"));
-        p.setFechaRegistro(rs.getDate("fecha_registro").toLocalDate());
+        p.setFechaRegistro(rs.getDate("fecha_registro")
+                .toLocalDate());
         Categoria c = new Categoria();
         c.setId(rs.getLong("categoria_id"));
         c.setNombre(rs.getString("categoria"));
