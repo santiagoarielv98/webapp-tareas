@@ -27,6 +27,9 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}/curso/productos">Productos</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/curso/usuarios">Usuarios</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/curso/carro/ver">Ver carro
                         (${sessionScope.carro.items.size()})</a>
                 </li>

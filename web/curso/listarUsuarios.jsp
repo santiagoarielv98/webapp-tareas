@@ -4,39 +4,31 @@
 <h3>${requestScope.title}</h3>
 <c:if test="${requestScope.username.present}">
     <div class="alert alert-info">Hola ${requestScope.username.get()}, bienvenido!</div>
-    <a class="btn btn-primary my-2" href="${pageContext.request.contextPath}/curso/productos/form">crear [+]</a>
+    <a class="btn btn-primary my-2" href="${pageContext.request.contextPath}/curso/usuarios/form">crear [+]</a>
 </c:if>
 <table class="table table-hover table-striped">
     <tr>
         <th>id</th>
-        <th>nombre</th>
-        <th>tipo</th>
+        <th>username</th>
+        <th>email</th>
         <c:if test="${requestScope.username.present}">
-            <th>precio</th>
             <th>agregar</th>
             <th>editar</th>
-            <th>eliminar</th>
         </c:if>
     </tr>
-    <c:forEach items="${requestScope.productos}" var="p">
+    <c:forEach items="${requestScope.usuarios}" var="p">
         <tr>
             <td>${p.id}</td>
-            <td>${p.nombre}</td>
-            <td>${p.categoria.nombre}</td>
+            <td>${p.username}</td>
+            <td>${p.email}</td>
             <c:if test="${requestScope.username.present}">
-                <td>${p.precio}</td>
-                <td><a class="btn btn-sm btn-primary"
-                       href="${pageContext.request.contextPath}/curso/carro/agregar${"?id="}${p.id}">agregar al
-                    carro</a></td>
                 <td><a class="btn btn-sm btn-success"
-                       href="${pageContext.request.contextPath}/curso/productos/form${"?id="}${p.id}">editar</a></td>
+                       href="${pageContext.request.contextPath}/curso/usuarios/form${"?id="}${p.id}">editar</a></td>
                 <td><a class="btn btn-sm btn-danger" onclick="return confirm('esta seguro que desea eliminar?');"
-                       href="${pageContext.request.contextPath}/curso/productos/eliminar${"?id="}${p.id}">eliminar</a>
+                       href="${pageContext.request.contextPath}/curso/usuarios/eliminar${"?id="}${p.id}">eliminar</a>
                 </td>
             </c:if>
         </tr>
     </c:forEach>
 </table>
-<p>${applicationScope.mensaje}</p>
-<p>${requestScope.mensaje}</p>
 <jsp:include page="layout/footer.jsp"/>
