@@ -22,7 +22,7 @@ public class CursoServlet extends HttpServlet {
         CursoService cursoService = new CursoServiceImpl(conn);
         List<Curso> listaCursos = cursoService.listar();
 
-        System.out.println("listaCursos = " + listaCursos);
+        req.setAttribute("titulo", req.getAttribute("titulo") + " - Listado de cursos");
 
         req.setAttribute("listaCursos", listaCursos);
         req.getRequestDispatcher("index.jsp")

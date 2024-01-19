@@ -47,6 +47,7 @@ public class CursoFormServlet extends HttpServlet {
         } catch (NumberFormatException e) {
             id = 0L;
         }
+        req.setAttribute("titulo", req.getAttribute("titulo") + (id == 0L ? " - Crear curso" : " - Editar curso"));
         req.setAttribute("curso", c);
         req.setAttribute("id", id);
         req.getRequestDispatcher("form.jsp")
@@ -96,6 +97,8 @@ public class CursoFormServlet extends HttpServlet {
         c.setInstructor(instructor);
         c.setDuracion(duracion);
         c.setDescripcion(descripcion);
+
+        req.setAttribute("titulo", req.getAttribute("titulo") + (id == 0L ? " - Crear curso" : " - Editar curso"));
 
         if (errores.isEmpty()) {
             cursoService.guardar(c);
