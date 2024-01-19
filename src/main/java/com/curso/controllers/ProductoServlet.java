@@ -1,15 +1,17 @@
 package com.curso.controllers;
 
+import com.curso.models.Producto;
+import com.curso.services.LoginService;
+import com.curso.services.LoginServiceSessionImpl;
+import com.curso.services.ProductoService;
+import com.curso.services.ProductoServiceJdbcImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import com.curso.models.Producto;
-import com.curso.services.*;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +30,7 @@ public class ProductoServlet extends HttpServlet {
         req.setAttribute("productos", productos);
         req.setAttribute("username", usernameOptional);
         req.setAttribute("title", req.getAttribute("title") + ": Listado de productos");
-        getServletContext().getRequestDispatcher("/listar.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/listar.jsp")
+                .forward(req, resp);
     }
 }

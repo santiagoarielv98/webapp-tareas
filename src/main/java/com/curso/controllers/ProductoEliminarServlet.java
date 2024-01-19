@@ -1,13 +1,13 @@
 package com.curso.controllers;
 
+import com.curso.models.Producto;
+import com.curso.services.ProductoService;
+import com.curso.services.ProductoServiceJdbcImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import com.curso.models.Producto;
-import com.curso.services.ProductoService;
-import com.curso.services.ProductoServiceJdbcImpl;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,17 +20,12 @@ public class ProductoEliminarServlet extends HttpServlet {
 
         Connection conn = (Connection) req.getAttribute("conn");
         ProductoService service = new ProductoServiceJdbcImpl(conn);
-        long id;
-        try {
-            id = Long.parseLong(req.getParameter("id"));
-        } catch (NumberFormatException e) {
-            id = 0L;
-        }
+        long id = ProductoFormServlet.getId(req);
         if (id > 0) {
             Optional<Producto> o = service.porId(id);
             if (o.isPresent()) {
                 service.eliminar(id);
-                resp.sendRedirect(req.getContextPath()+ "/productos");
+                resp.sendRedirect(req.getContextPath() + "/productos");
             } else {
                 resp.sendError(HttpServletResponse.SC_NOT_FOUND, "No existe el producto en la base de datos!");
             }
