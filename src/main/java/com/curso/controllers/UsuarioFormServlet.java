@@ -71,7 +71,7 @@ public class UsuarioFormServlet extends HttpServlet {
 
         if (errores.isEmpty()) {
             service.guardar(usuario);
-            resp.sendRedirect(req.getContextPath() + "/curso/productos");
+            resp.sendRedirect(req.getContextPath() + "/curso/usuarios");
         } else {
             req.setAttribute("errores", errores);
             req.setAttribute("usuario", usuario);

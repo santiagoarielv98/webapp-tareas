@@ -27,7 +27,7 @@ public class UsuarioEliminarServlet extends HttpServlet {
             Optional<Usuario> o = service.porId(id);
             if (o.isPresent()) {
                 service.eliminar(id);
-                resp.sendRedirect(req.getContextPath() + "/curso/productos");
+                resp.sendRedirect(req.getContextPath() + "/curso/usuarios");
             } else {
                 resp.sendError(HttpServletResponse.SC_NOT_FOUND, "No existe el producto en la base de datos!");
             }

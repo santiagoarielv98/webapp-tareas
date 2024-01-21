@@ -24,10 +24,10 @@
                        href="${pageContext.request.contextPath}/curso/index.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/curso/productos">Productos</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/curso/usuarios">Usuarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/curso/usuarios">Usuarios</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/curso/productos">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/curso/carro/ver">Ver carro

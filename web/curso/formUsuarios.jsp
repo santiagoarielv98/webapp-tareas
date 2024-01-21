@@ -16,7 +16,7 @@
     </div>
 
     <div class="row mb-2">
-        <label for="email" class="col-form-label col-sm-2">Username</label>
+        <label for="email" class="col-form-label col-sm-2">Email</label>
         <div class="col-sm-4">
             <input type="text" name="email" id="email" value="${requestScope.usuario.email}" class="form-control">
         </div>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="row mb-2">
-        <label for="password" class="col-form-label col-sm-2">Username</label>
+        <label for="password" class="col-form-label col-sm-2">Password</label>
         <div class="col-sm-4">
             <input type="password" name="password" id="password" value="${requestScope.usuario.password}"
                    class="form-control">
