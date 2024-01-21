@@ -10,8 +10,8 @@ import java.sql.SQLException;
 public class ConexionBaseDatosDS {
 
     public static Connection getConnection() throws SQLException {
-        Context initContext = null;
-        DataSource ds = null;
+        Context initContext ;
+        DataSource ds;
         try {
             initContext = new InitialContext();
             Context envContext = (Context) initContext.lookup("java:/comp/env");
