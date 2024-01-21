@@ -1,7 +1,7 @@
 package com.curso.filters;
 
 import com.curso.services.ServiceJdbcException;
-import com.curso.util.ConexionBaseDatos;
+import com.curso.util.ConexionBaseDatosDS;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,7 +15,7 @@ public class ConexionFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        try (Connection conn = ConexionBaseDatos.getConnection()) {
+        try (Connection conn = ConexionBaseDatosDS.getConnection()) {
 
             if (conn.getAutoCommit()) {
                 conn.setAutoCommit(false);
