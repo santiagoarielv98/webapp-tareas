@@ -5,12 +5,12 @@ import com.curso.models.ItemCarro;
 import com.curso.models.Producto;
 import com.curso.services.ProductoService;
 import com.curso.services.ProductoServiceJdbcImpl;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -18,6 +18,9 @@ import java.util.Optional;
 
 @WebServlet("/curso/carro/agregar")
 public class AgregarCarroServlet extends HttpServlet {
+
+    @Inject
+    private Carro carro;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,8 +30,8 @@ public class AgregarCarroServlet extends HttpServlet {
         Optional<Producto> producto = service.porId(id);
         if (producto.isPresent()) {
             ItemCarro item = new ItemCarro(1, producto.get());
-            HttpSession session = req.getSession();
-            Carro carro = (Carro) session.getAttribute("carro");
+//            HttpSession session = req.getSession();
+//            Carro carro = (Carro) session.getAttribute("carro");
             carro.addItemCarro(item);
         }
         resp.sendRedirect(req.getContextPath() + "/curso/carro/ver");

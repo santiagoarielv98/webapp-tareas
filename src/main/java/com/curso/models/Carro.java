@@ -1,10 +1,16 @@
 package com.curso.models;
 
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Named;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Carro {
+@SessionScoped
+@Named
+public class Carro implements Serializable {
     private final List<ItemCarro> items;
 
     public Carro() {
