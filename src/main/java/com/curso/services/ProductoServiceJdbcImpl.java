@@ -1,5 +1,6 @@
 package com.curso.services;
 
+import com.curso.configs.ProductoServicePrincipal;
 import com.curso.models.Categoria;
 import com.curso.models.Producto;
 import com.curso.repositories.Repository;
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 
 @ApplicationScoped
+@ProductoServicePrincipal
 //@Named("productoServiceJdbc")
 public class ProductoServiceJdbcImpl implements ProductoService {
     @Inject

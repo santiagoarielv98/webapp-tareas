@@ -1,11 +1,10 @@
 package com.curso.controllers;
 
+import com.curso.configs.ProductoServicePrincipal;
 import com.curso.models.Producto;
 import com.curso.services.LoginService;
-import com.curso.services.LoginServiceSessionImpl;
 import com.curso.services.ProductoService;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -20,14 +19,17 @@ import java.util.Optional;
 public class ProductoServlet extends HttpServlet {
 
     @Inject
+    @ProductoServicePrincipal
     private ProductoService service;
+
+    @Inject
+    private LoginService auth;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        ProductoService service = new ProductoServiceJdbcImpl(conn);
         List<Producto> productos = service.listar();
 
-        LoginService auth = new LoginServiceSessionImpl();
         Optional<String> usernameOptional = auth.getUsername(req);
 
         req.setAttribute("productos", productos);

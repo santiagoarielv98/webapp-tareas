@@ -1,8 +1,8 @@
 package com.curso.filters;
 
+import com.curso.configs.MySqlConn;
 import com.curso.services.ServiceJdbcException;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class ConexionFilter implements Filter {
 
     @Inject
-    @Named("conn")
+    @MySqlConn
     private Connection conn;
 
     @Override

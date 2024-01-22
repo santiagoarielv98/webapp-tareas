@@ -1,9 +1,9 @@
 package com.curso.controllers;
 
+import com.curso.configs.ProductoServicePrincipal;
 import com.curso.models.Producto;
 import com.curso.services.ProductoService;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,6 +16,7 @@ import java.util.Optional;
 @WebServlet("/curso/productos/eliminar")
 public class ProductoEliminarServlet extends HttpServlet {
     @Inject
+    @ProductoServicePrincipal
     private ProductoService service;
 
     @Override

@@ -2,7 +2,6 @@ package com.curso.controllers;
 
 import com.curso.models.Usuario;
 import com.curso.services.LoginService;
-import com.curso.services.LoginServiceSessionImpl;
 import com.curso.services.UsuarioService;
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
@@ -21,10 +20,11 @@ public class LoginServlet extends HttpServlet {
 
     @Inject
     private UsuarioService service;
+    @Inject
+    private LoginService auth;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LoginService auth = new LoginServiceSessionImpl();
         Optional<String> usernameOptional = auth.getUsername(req);
 
         if (usernameOptional.isPresent()) {

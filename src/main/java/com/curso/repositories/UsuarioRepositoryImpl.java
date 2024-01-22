@@ -1,9 +1,9 @@
 package com.curso.repositories;
 
+import com.curso.configs.MySqlConn;
+import com.curso.configs.Repositorio;
 import com.curso.models.Usuario;
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,11 +12,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@ApplicationScoped
+@Repositorio
 public class UsuarioRepositoryImpl implements UsuarioRepository {
 
     @Inject
-    @Named("conn")
+    @MySqlConn
     private Connection conn;
 
 

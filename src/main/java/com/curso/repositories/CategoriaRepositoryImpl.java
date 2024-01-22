@@ -1,21 +1,21 @@
 package com.curso.repositories;
 
+import com.curso.configs.MySqlConn;
+import com.curso.configs.Repositorio;
 import com.curso.models.Categoria;
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@ApplicationScoped
+@Repositorio
 public class CategoriaRepositoryImpl implements Repository<Categoria> {
 
     private final Connection conn;
 
     @Inject
-    public CategoriaRepositoryImpl(@Named("conn") Connection conn) {
+    public CategoriaRepositoryImpl(@MySqlConn Connection conn) {
         this.conn = conn;
     }
 
