@@ -5,7 +5,7 @@
        bean-discovery-mode="annotated">
     <interceptors>
         <class>com.curso.interceptors.LoggingInterceptor</class>
-        <class>com.curso.interceptors.TransactionalJdbc</class>
+        <class>com.curso.interceptors.TransactionalInterceptor</class>
     </interceptors>
     <!-- Si necesitas agregar alternativas, interceptores, etc., los declaras aquí -->
 </beans>
