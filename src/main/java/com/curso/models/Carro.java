@@ -1,19 +1,35 @@
 package com.curso.models;
 
 import com.curso.configs.CarroCompra;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import jakarta.inject.Inject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @CarroCompra
 public class Carro implements Serializable {
-    private final List<ItemCarro> items;
+    private List<ItemCarro> items;
+    @Inject
+    private transient Logger logger;
 
-    public Carro() {
+    @PostConstruct
+    public void init() {
         this.items = new ArrayList<>();
+//        System.out.println("Carro.init");
+        logger.info("Carro.init");
     }
+
+    @PreDestroy
+    public void destroy() {
+//        System.out.println("Carro.destroy");
+        logger.info("Carro.destroy");
+    }
+
 
     public void addItemCarro(ItemCarro itemCarro) {
         if (items.contains(itemCarro)) {

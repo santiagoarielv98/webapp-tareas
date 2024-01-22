@@ -1,21 +1,37 @@
 package com.curso.repositories;
 
 import com.curso.configs.MySqlConn;
-import com.curso.configs.Repositorio;
+import com.curso.configs.Repository;
 import com.curso.models.Categoria;
 import com.curso.models.Producto;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import jakarta.inject.Inject;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
-@Repositorio
-public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
+@Repository
+public class ProductoRepositoryJdbcImpl implements CrudRepository<Producto> {
+
+    @Inject
+    private Logger logger;
 
     @Inject
     @MySqlConn
     private Connection conn;
+
+    @PostConstruct
+    public void init() {
+        logger.info("Inicializando el repositorio de productos");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        logger.info("Destruyendo el repositorio de productos");
+    }
 
 
     @Override

@@ -3,7 +3,7 @@ package com.curso.services;
 import com.curso.configs.ProductoServicePrincipal;
 import com.curso.models.Categoria;
 import com.curso.models.Producto;
-import com.curso.repositories.Repository;
+import com.curso.repositories.CrudRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
@@ -17,10 +17,10 @@ import java.util.Optional;
 //@Named("productoServiceJdbc")
 public class ProductoServiceJdbcImpl implements ProductoService {
     @Inject
-    private Repository<Producto> repositoryJdbc;
+    private CrudRepository<Producto> repositoryJdbc;
 
     @Inject
-    private Repository<Categoria> repositoryCategoriaJdbc;
+    private CrudRepository<Categoria> repositoryCategoriaJdbc;
 
 
     @Override
