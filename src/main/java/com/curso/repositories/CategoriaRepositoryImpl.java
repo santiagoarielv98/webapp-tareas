@@ -1,15 +1,21 @@
 package com.curso.repositories;
 
 import com.curso.models.Categoria;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
 public class CategoriaRepositoryImpl implements Repository<Categoria> {
+
     private final Connection conn;
 
-    public CategoriaRepositoryImpl(Connection conn) {
+    @Inject
+    public CategoriaRepositoryImpl(@Named("conn") Connection conn) {
         this.conn = conn;
     }
 

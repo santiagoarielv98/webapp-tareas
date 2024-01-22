@@ -2,23 +2,24 @@ package com.curso.services;
 
 import com.curso.models.Categoria;
 import com.curso.models.Producto;
-import com.curso.repositories.CategoriaRepositoryImpl;
-import com.curso.repositories.ProductoRepositoryJdbcImpl;
 import com.curso.repositories.Repository;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-public class ProductoServiceJdbcImpl implements ProductoService {
-    private final Repository<Producto> repositoryJdbc;
-    private final Repository<Categoria> repositoryCategoriaJdbc;
 
-    public ProductoServiceJdbcImpl(Connection connection) {
-        this.repositoryJdbc = new ProductoRepositoryJdbcImpl(connection);
-        this.repositoryCategoriaJdbc = new CategoriaRepositoryImpl(connection);
-    }
+@ApplicationScoped
+//@Named("productoServiceJdbc")
+public class ProductoServiceJdbcImpl implements ProductoService {
+    @Inject
+    private Repository<Producto> repositoryJdbc;
+
+    @Inject
+    private Repository<Categoria> repositoryCategoriaJdbc;
+
 
     @Override
     public List<Producto> listar() {

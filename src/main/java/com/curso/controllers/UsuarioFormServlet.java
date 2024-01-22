@@ -2,7 +2,7 @@ package com.curso.controllers;
 
 import com.curso.models.Usuario;
 import com.curso.services.UsuarioService;
-import com.curso.services.UsuarioServiceImpl;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -10,17 +10,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
 @WebServlet("/curso/usuarios/form")
 public class UsuarioFormServlet extends HttpServlet {
+    @Inject
+    private UsuarioService service;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Connection conn = (Connection) req.getAttribute("conn");
-        UsuarioService service = new UsuarioServiceImpl(conn);
         long id;
         id = ProductoFormServlet.getId(req);
         Usuario usuario = new Usuario();
@@ -41,9 +41,6 @@ public class UsuarioFormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-        Connection conn = (Connection) req.getAttribute("conn");
-        UsuarioService service = new UsuarioServiceImpl(conn);
 
         Map<String, String> errores = new HashMap<>();
 

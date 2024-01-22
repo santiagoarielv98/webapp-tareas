@@ -1,7 +1,8 @@
 package com.curso.filters;
 
 import com.curso.services.ServiceJdbcException;
-import com.curso.util.ConexionBaseDatosDS;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,17 +13,22 @@ import java.sql.SQLException;
 
 @WebFilter("/curso/*")
 public class ConexionFilter implements Filter {
+
+    @Inject
+    @Named("conn")
+    private Connection conn;
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        try (Connection conn = ConexionBaseDatosDS.getConnection()) {
+        try (Connection conn = this.conn) {
 
             if (conn.getAutoCommit()) {
                 conn.setAutoCommit(false);
             }
 
             try {
-                request.setAttribute("conn", conn);
+//                request.setAttribute("conn", conn);
                 chain.doFilter(request, response);
                 conn.commit();
             } catch (SQLException | ServiceJdbcException e) {

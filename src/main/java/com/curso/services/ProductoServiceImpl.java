@@ -2,10 +2,13 @@ package com.curso.services;
 
 import com.curso.models.Categoria;
 import com.curso.models.Producto;
+import jakarta.enterprise.inject.Alternative;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+
+@Alternative
 
 public class ProductoServiceImpl implements ProductoService {
     @Override

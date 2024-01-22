@@ -2,19 +2,20 @@ package com.curso.services;
 
 import com.curso.models.Usuario;
 import com.curso.repositories.UsuarioRepository;
-import com.curso.repositories.UsuarioRepositoryImpl;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
+@ApplicationScoped
 public class UsuarioServiceImpl implements UsuarioService {
-    private final UsuarioRepository usuarioRepository;
 
-    public UsuarioServiceImpl(Connection connection) {
-        this.usuarioRepository = new UsuarioRepositoryImpl(connection);
-    }
+
+    @Inject
+    private UsuarioRepository usuarioRepository;
+
 
     @Override
     public Optional<Usuario> login(String username, String password) {

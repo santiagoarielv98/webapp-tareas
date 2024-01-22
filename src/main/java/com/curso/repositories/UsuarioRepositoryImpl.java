@@ -1,6 +1,9 @@
 package com.curso.repositories;
 
 import com.curso.models.Usuario;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,12 +12,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
 public class UsuarioRepositoryImpl implements UsuarioRepository {
-    private final Connection conn;
 
-    public UsuarioRepositoryImpl(Connection conn) {
-        this.conn = conn;
-    }
+    @Inject
+    @Named("conn")
+    private Connection conn;
+
 
     @Override
     public List<Usuario> listar() throws SQLException {

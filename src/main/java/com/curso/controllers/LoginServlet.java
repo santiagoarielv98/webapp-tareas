@@ -4,7 +4,7 @@ import com.curso.models.Usuario;
 import com.curso.services.LoginService;
 import com.curso.services.LoginServiceSessionImpl;
 import com.curso.services.UsuarioService;
-import com.curso.services.UsuarioServiceImpl;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,11 +14,13 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
 import java.util.Optional;
 
 @WebServlet({"/curso/login", "/curso/login.html"})
 public class LoginServlet extends HttpServlet {
+
+    @Inject
+    private UsuarioService service;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -54,7 +56,6 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        UsuarioService service = new UsuarioServiceImpl((Connection) req.getAttribute("conn"));
         Optional<Usuario> usuarioOptional = service.login(username, password);
         if (usuarioOptional.isPresent()) {
 
