@@ -1,10 +1,10 @@
 package com.curso.services;
 
 import com.curso.configs.ProductoServicePrincipal;
+import com.curso.configs.Service;
 import com.curso.models.Categoria;
 import com.curso.models.Producto;
 import com.curso.repositories.CrudRepository;
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@ApplicationScoped
+@Service
 @ProductoServicePrincipal
 //@Named("productoServiceJdbc")
 public class ProductoServiceJdbcImpl implements ProductoService {

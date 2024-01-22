@@ -1,15 +1,16 @@
 package com.curso.services;
 
+import com.curso.configs.Service;
 import com.curso.models.Usuario;
 import com.curso.repositories.UsuarioRepository;
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-@ApplicationScoped
+
+@Service
 public class UsuarioServiceImpl implements UsuarioService {
 
 
