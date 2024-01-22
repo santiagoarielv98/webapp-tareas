@@ -1,14 +1,17 @@
 package com.curso.configs;
 
 import jakarta.annotation.Resource;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.inject.Disposes;
 import jakarta.enterprise.inject.Produces;
-import jakarta.inject.Named;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+
+@ApplicationScoped
 public class ProducerResources {
 
     @Resource(name = "jdbc/TestDB")
@@ -19,5 +22,10 @@ public class ProducerResources {
     @MySqlConn
     private Connection beanConnection() throws SQLException {
         return ds.getConnection();
+    }
+
+    public void closeConnection(@Disposes @MySqlConn Connection conn) throws SQLException {
+        conn.close();
+        System.out.println("Connection closed");
     }
 }
