@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@taglib prefix="c" uri="jakarta.tags.core" %>
+<%--<%@taglib prefix="c" uri="jakarta.tags.core" %>--%>
 <html>
 <head>
     <title>Tarea 15 - Factura</title>
@@ -18,9 +18,9 @@
 <main>
     <h1>Ejemplo Factura con inyección de dependencia</h1>
     <ul class="list-group">
-        <li class="list-group-item">Factura: ${factura.numeroFactura}</li>
-        <li class="list-group-item">Factura Oficina del cliente: ${factura.cliente.nombre}</li>
-        <li class="list-group-item">${factura.cliente.nombre} ${factura.cliente.apellido}</li>
+<%--        <li class="list-group-item">Factura: ${factura.numeroFactura}</li>--%>
+<%--        <li class="list-group-item">Factura Oficina del cliente: ${factura.cliente.nombre}</li>--%>
+<%--        <li class="list-group-item">${factura.cliente.nombre} ${factura.cliente.apellido}</li>--%>
     </ul>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
