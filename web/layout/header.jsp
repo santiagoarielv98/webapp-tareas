@@ -1,40 +1,54 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: santi
-  Date: 19/1/2024
-  Time: 09:02
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" %>
-
-<c:set var="rutaActual" value="${pageContext.request.requestURI}"/>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>${requestScope.titulo}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>${requestScope.title}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container">
-        <a class="navbar-brand" href="#">Curso</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link${not rutaActual.endsWith("/tarea-9/index") ? ' active':''}"
-                       href="${pageContext.request.contextPath}/tarea-9/index">Listado</a>
+                    <a class="nav-link active" aria-current="page"
+                       href="${pageContext.request.contextPath}/curso/index.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link${not rutaActual.endsWith("/tarea-9/crear") ? ' active':''}"
-                       href="${pageContext.request.contextPath}/tarea-9/crear">Crear Curso</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/curso/usuarios">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/curso/productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/curso/carro/ver">Ver carro
+                        (${carro.items.size()})</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        ${not empty sessionScope.username? sessionScope.username: "Cuenta"}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item"
+                               href="${pageContext.request.contextPath}/curso/${not empty sessionScope.username? "logout": "login"}">
+                                ${not empty sessionScope.username? "Logout": "Login"}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
+
         </div>
     </div>
 </nav>

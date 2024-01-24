@@ -1,99 +1,75 @@
-<%@ page import="com.svillanueva.models.Categoria" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Map" %>
-<%@ page import="java.util.Optional" %>
-<%@ page import="com.svillanueva.models.Producto" %>
-<%@ page import="java.util.Objects" %><%--
-  Created by IntelliJ IDEA.
-  User: santi
-  Date: 18/1/2024
-  Time: 10:16
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:include page="layout/header.jsp"/>
 
-<%
-    @SuppressWarnings("unchecked")
-    List<Categoria> listaCategorias = (List<Categoria>) request.getAttribute("listaCategorias");
+<h3>${requestScope.title}</h3>
 
-    @SuppressWarnings("unchecked")
-    Optional<Producto> producto = (Optional<Producto>) request.getAttribute("producto");
-
-    @SuppressWarnings("unchecked")
-    Map<String, String> errores = (Map<String, String>) request.getAttribute("errores");
-%>
-<html>
-<head>
-    <title>Formulario Producto</title>
-</head>
-<body>
-<h1>Formulario Producto</h1>
-<form action="${pageContext.request.contextPath}/producto/form" method="post">
-    <input type="hidden" name="id" value="<%=producto.isPresent() ? producto.get().getId() : 0%>">
-    <div>
-        <label for="nombre">Nombre</label>
-        <div>
-            <input type="text" name="nombre" id="nombre"
-                   value="<%= producto.isPresent() ? producto.get().getNombre() : ""%>">
+<form action="${pageContext.request.contextPath}/curso/productos/form" method="post">
+    <div class="row mb-2">
+        <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+        <div class="col-sm-4">
+            <input type="text" name="nombre" id="nombre" value="${requestScope.producto.nombre}" class="form-control">
         </div>
-        <% if (errores != null && errores.containsKey("nombre")) { %>
-        <span style="color: red"><%=errores.get("nombre")%></span>
-        <% } %>
+        <c:if test="${requestScope.errores != null && requestScope.errores.containsKey('nombre')}">
+            <div style="color:red;">${requestScope.errores.nombre}</div>
+        </c:if>
     </div>
-    <div>
-        <label for="precio">Precio</label>
-        <div>
+
+    <div class="row mb-2">
+        <label for="precio" class="col-form-label col-sm-2">Precio</label>
+        <div class="col-sm-4">
             <input type="number" name="precio" id="precio"
-                   value="<%= producto.isPresent() ? producto.get().getPrecio() : ""%>">
+                   value="${requestScope.producto.precio > 0? requestScope.producto.precio: ""}" class="form-control">
         </div>
-        <% if (errores != null && errores.containsKey("precio")) { %>
-        <span style="color: red"><%=errores.get("precio")%></span>
-        <% } %>
+        <c:if test="${requestScope.errores != null && not empty requestScope.errores.precio}">
+            <div style="color:red;">${requestScope.errores.precio}</div>
+        </c:if>
     </div>
-    <div>
-        <label for="sku">SKU</label>
-        <div>
-            <input type="text" name="sku" id="sku" value="<%= producto.isPresent() ? producto.get().getSku() : ""%>">
+
+    <div class="row mb-2">
+        <label for="sku" class="col-form-label col-sm-2">Sku</label>
+        <div class="col-sm-4">
+            <input type="text" name="sku" id="sku" value="${requestScope.producto.sku}" class="form-control">
         </div>
-        <% if (errores != null && errores.containsKey("sku")) { %>
-        <span style="color: red"><%=errores.get("sku")%></span>
-        <% } %>
+        <c:if test="${requestScope.errores != null && not empty requestScope.errores.sku}">
+            <div style="color:red;">${requestScope.errores.sku}</div>
+        </c:if>
     </div>
-    <div>
-        <label for="fecha_registro">Fecha Registro</label>
-        <div>
-            <input type="date" name="fecha_registro" id="fecha_registro"
-                   value="<%= producto.isPresent() ? producto.get().getFechaRegistro() : ""%>"
-            >
+
+    <div class="row mb-2">
+        <label for="fecha_registro" class="col-form-label col-sm-2">Fecha Registro</label>
+        <div class="col-sm-4">
+            <input class="form-control" type="date" name="fecha_registro" id="fecha_registro"
+                   value="${requestScope.producto.fechaRegistro != null? requestScope.producto.fechaRegistro.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")): ""}">
         </div>
-        <% if (errores != null && errores.containsKey("fecha_registro")) { %>
-        <span style="color: red"><%=errores.get("fecha_registro")%></span>
-        <% } %>
+        <c:if test="${requestScope.errores != null && not empty requestScope.errores.fecha_registro}">
+            <div style="color:red;">${requestScope.errores.fecha_registro}</div>
+        </c:if>
     </div>
-    <div>
-        <label for="categoria">Categoria</label>
-        <div>
-            <select name="categoria" id="categoria">
-                <option value="">Seleccionar</option>
-                <% for (Categoria categoria : listaCategorias) {%>
-                <option value="<%=categoria.getId()%>"
-                        <%= producto.isPresent() && Objects.equals(producto.get()
-                                .getCategoria()
-                                .getId(), categoria.getId()) ? "selected" : ""%>
-                >
-                    <%=categoria.getNombre()%>
-                </option>
-                <% } %>
+
+    <div class="row mb-2">
+        <label for="categoria" class="col-form-label col-sm-2">Categoria</label>
+        <div class="col-sm-4">
+            <select name="categoria" id="categoria" class="form-select">
+                <option value="">--- seleccionar ---</option>
+                <c:forEach items="${requestScope.categorias}" var="c">
+                    <option value="${c.id}" ${c.id.equals(requestScope.producto.categoria.id)? "selected": ""}>${c.nombre}</option>
+                </c:forEach>
             </select>
         </div>
-        <% if (errores != null && errores.containsKey("categoria")) { %>
-        <span style="color: red"><%=errores.get("categoria")%></span>
-        <% } %>
+        <c:if test="${requestScope.errores != null && not empty requestScope.errores.categoria}">
+            <div style="color:red;">${requestScope.errores.categoria}</div>
+        </c:if>
     </div>
 
-    <div>
-        <input type="submit" value="crear">
+    <div class="row mb-2">
+        <div>
+            <input class="btn btn-primary" type="submit"
+                   value="${requestScope.producto.id!=null && requestScope.producto.id>0? "Editar": "Crear"}">
+        </div>
     </div>
+    <input type="hidden" name="id" value="${requestScope.producto.id}">
 </form>
-</body>
-</html>
+
+<jsp:include page="layout/footer.jsp"/>

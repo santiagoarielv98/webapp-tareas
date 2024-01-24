@@ -4,8 +4,8 @@
        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd"
        bean-discovery-mode="annotated">
     <interceptors>
-        <class>com.curso.interceptors.LoggingInterceptor</class>
-        <class>com.curso.interceptors.TransactionalInterceptor</class>
+        <class>com.svillanueva.curso.interceptors.LoggingInterceptor</class>
+        <class>com.svillanueva.curso.interceptors.TransactionalInterceptor</class>
     </interceptors>
     <!-- Si necesitas agregar alternativas, interceptores, etc., los declaras aquí -->
 </beans>

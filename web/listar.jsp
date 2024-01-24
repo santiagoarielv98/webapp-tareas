@@ -1,58 +1,42 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: santi
-  Date: 17/1/2024
-  Time: 12:03
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-<h1>¡Listado de Productos!</h1>
-
-<div>Hola, Santiago bienvenido</div>
-<a href="${pageContext.request.contextPath}/producto/form">Crear [+] </a>
-<table>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:include page="layout/header.jsp"/>
+<h3>${requestScope.title}</h3>
+<c:if test="${requestScope.username.present}">
+    <div class="alert alert-info">Hola ${requestScope.username.get()}, bienvenido!</div>
+    <a class="btn btn-primary my-2" href="${pageContext.request.contextPath}/curso/productos/form">crear [+]</a>
+</c:if>
+<table class="table table-hover table-striped">
     <tr>
         <th>id</th>
         <th>nombre</th>
         <th>tipo</th>
-        <th>precio</th>
-        <th>agregar</th>
-        <th>editar</th>
-        <th>eliminar</th>
+        <c:if test="${requestScope.username.present}">
+            <th>precio</th>
+            <th>agregar</th>
+            <th>editar</th>
+            <th>eliminar</th>
+        </c:if>
     </tr>
-    <c:forEach items="${requestScope.listaProducto}" var="p">
+    <c:forEach items="${requestScope.productos}" var="p">
         <tr>
-            <td>
-                    ${p.id}
-            </td>
-            <td>
-                    ${p.nombre}
-            </td>
-            <td>
-                    ${p.categoria.nombre}
-            </td>
-            <td>
-                    ${p.precio}
-            </td>
-            <td>
-                <a href="${pageContext.request.contextPath}/tarea-6/agregar-carro${"?id="}${p.getId()}">
-                    agregar al carro
-                </a>
-            </td>
-            <td>
-                <a href="${pageContext.request.contextPath}/producto/form${"?id="}${p.getId()}">editar</a>
-            <td>
-                <a onclick="return confirm('Deseas Eliminar este producto');"
-                   href="${pageContext.request.contextPath}/producto/eliminar${"?id="}${p.getId()}">eliminar</a>
+            <td>${p.id}</td>
+            <td>${p.nombre}</td>
+            <td>${p.categoria.nombre}</td>
+            <c:if test="${requestScope.username.present}">
+                <td>${p.precio}</td>
+                <td><a class="btn btn-sm btn-primary"
+                       href="${pageContext.request.contextPath}/curso/carro/agregar${"?id="}${p.id}">agregar al
+                    carro</a></td>
+                <td><a class="btn btn-sm btn-success"
+                       href="${pageContext.request.contextPath}/curso/productos/form${"?id="}${p.id}">editar</a></td>
+                <td><a class="btn btn-sm btn-danger" onclick="return confirm('esta seguro que desea eliminar?');"
+                       href="${pageContext.request.contextPath}/curso/productos/eliminar${"?id="}${p.id}">eliminar</a>
+                </td>
+            </c:if>
         </tr>
     </c:forEach>
 </table>
-</body>
-</html>
+<p>${applicationScope.mensaje}</p>
+<p>${requestScope.mensaje}</p>
+<jsp:include page="layout/footer.jsp"/>
