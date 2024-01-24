@@ -1,5 +1,6 @@
 package com.svillanueva.interceptors;
 
+import com.svillanueva.configs.MySqlConn;
 import com.svillanueva.services.ServiceJdbcException;
 import jakarta.inject.Inject;
 import jakarta.interceptor.AroundInvoke;
@@ -13,6 +14,7 @@ import java.sql.Connection;
 public class TransactionalInterceptor {
 
     @Inject
+    @MySqlConn
     private Connection conn;
 
 

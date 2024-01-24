@@ -1,5 +1,6 @@
 package com.svillanueva.repositories;
 
+import com.svillanueva.configs.MySqlConn;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import com.svillanueva.models.Curso;
@@ -12,6 +13,7 @@ import java.util.List;
 public class CursoRepositorioImpl implements Repository<Curso> {
 
     @Inject
+    @MySqlConn
     private Connection conn;
 
     @Override
