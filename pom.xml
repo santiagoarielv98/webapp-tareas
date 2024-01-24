@@ -48,7 +48,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <path>/${project.artifactId}-curso</path>
+                    <path>/proyecto-curso</path>
                     <username>admin</username>
                     <password>1234</password>
                     <url>http://localhost:8080/manager/text</url>
