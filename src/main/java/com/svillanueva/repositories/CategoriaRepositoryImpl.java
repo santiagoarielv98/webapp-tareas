@@ -1,17 +1,22 @@
 package com.svillanueva.repositories;
 
+import com.svillanueva.interceptors.MySqlConn;
 import com.svillanueva.models.Categoria;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
 public class CategoriaRepositoryImpl implements Repository<Categoria> {
 
-    private final Connection conn;
+    @Inject
+    @MySqlConn
+    private Connection conn;
 
-    public CategoriaRepositoryImpl(Connection conn) {
-        this.conn = conn;
+    public CategoriaRepositoryImpl() {
     }
 
     @Override
@@ -41,7 +46,7 @@ public class CategoriaRepositoryImpl implements Repository<Categoria> {
             preparedStatement.setLong(1, id);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
-                        c = getCategoria(resultSet);
+                    c = getCategoria(resultSet);
                 }
             }
         }

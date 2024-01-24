@@ -2,17 +2,15 @@ package com.svillanueva.services;
 
 import com.svillanueva.models.Usuario;
 import com.svillanueva.repositories.UsuarioRepository;
-import com.svillanueva.repositories.UsuarioRepositoryImpl;
+import jakarta.inject.Inject;
 
-import java.sql.Connection;
 import java.util.Optional;
 
 public class UsuarioServiceImpl implements UsuarioService {
+    @Inject
+    private UsuarioRepository usuarioRepository;
 
-    private final UsuarioRepository usuarioRepository;
-
-    public UsuarioServiceImpl(Connection conn) {
-        this.usuarioRepository = new UsuarioRepositoryImpl(conn);
+    public UsuarioServiceImpl() {
     }
 
     @Override

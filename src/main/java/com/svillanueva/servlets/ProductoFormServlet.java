@@ -2,8 +2,8 @@ package com.svillanueva.servlets;
 
 import com.svillanueva.models.Categoria;
 import com.svillanueva.models.Producto;
-import com.svillanueva.services.ProductServiceJdbcImpl;
 import com.svillanueva.services.ProductoService;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,12 +18,13 @@ import java.util.Optional;
 
 @WebServlet("/producto/form")
 public class ProductoFormServlet extends HttpServlet {
+
+    @Inject
+    private ProductoService productoService;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Connection conn = (Connection) req.getAttribute("conn");
 
-
-        ProductoService productoService = new ProductServiceJdbcImpl(conn);
 
         long id;
         Optional<Producto> producto = Optional.empty();
@@ -49,10 +49,6 @@ public class ProductoFormServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Connection conn = (Connection) req.getAttribute("conn");
-        ProductoService productService = new ProductServiceJdbcImpl(conn);
-
-
         Producto p = new Producto();
         Categoria c = new Categoria();
 
@@ -115,7 +111,7 @@ public class ProductoFormServlet extends HttpServlet {
         }
 
         if (errores.isEmpty()) {
-            productService.guardar(p);
+            productoService.guardar(p);
             resp.sendRedirect(req.getContextPath() + "/tarea-6/productos");
         } else {
             req.setAttribute("errores", errores);

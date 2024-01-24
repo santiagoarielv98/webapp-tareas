@@ -2,23 +2,25 @@ package com.svillanueva.services;
 
 import com.svillanueva.models.Categoria;
 import com.svillanueva.models.Producto;
-import com.svillanueva.repositories.CategoriaRepositoryImpl;
-import com.svillanueva.repositories.ProductoRepositoryJdbcImpl;
 import com.svillanueva.repositories.Repository;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
+@ApplicationScoped
 public class ProductServiceJdbcImpl implements ProductoService {
-    private final Repository<Producto> productoRepository;
 
-    private final Repository<Categoria> categoriaRepository;
+    @Inject
+    private Repository<Producto> productoRepository;
+    @Inject
+    private Repository<Categoria> categoriaRepository;
 
-    public ProductServiceJdbcImpl(Connection connection) {
-        this.productoRepository = new ProductoRepositoryJdbcImpl(connection);
-        this.categoriaRepository = new CategoriaRepositoryImpl(connection);
+    public ProductServiceJdbcImpl() {
+//        this.productoRepository = new ProductoRepositoryJdbcImpl();
+//        this.categoriaRepository = new CategoriaRepositoryImpl();
     }
 
     @Override

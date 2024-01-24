@@ -1,17 +1,22 @@
 package com.svillanueva.repositories;
 
+import com.svillanueva.interceptors.MySqlConn;
 import com.svillanueva.models.Categoria;
 import com.svillanueva.models.Producto;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
 public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
-    private final Connection conn;
+    @Inject
+    @MySqlConn
+    private Connection conn;
 
-    public ProductoRepositoryJdbcImpl(Connection conn) {
-        this.conn = conn;
+    public ProductoRepositoryJdbcImpl() {
     }
 
     @Override

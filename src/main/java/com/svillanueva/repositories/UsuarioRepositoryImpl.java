@@ -1,17 +1,20 @@
 package com.svillanueva.repositories;
 
+import com.svillanueva.interceptors.MySqlConn;
 import com.svillanueva.models.Usuario;
+import jakarta.inject.Inject;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UsuarioRepositoryImpl implements UsuarioRepository{
+public class UsuarioRepositoryImpl implements UsuarioRepository {
+    @Inject
+    @MySqlConn
+    private Connection conn;
 
-    private final Connection conn;
+    public UsuarioRepositoryImpl() {
 
-    public UsuarioRepositoryImpl(Connection conn) {
-        this.conn = conn;
     }
 
     @Override
@@ -35,12 +38,12 @@ public class UsuarioRepositoryImpl implements UsuarioRepository{
     }
 
     @Override
-    public Usuario findByUsername(String username)  {
+    public Usuario findByUsername(String username) {
         Usuario usuario = null;
-        try(var stmt = conn.prepareStatement("SELECT * FROM usuarios WHERE username = ?")){
+        try (var stmt = conn.prepareStatement("SELECT * FROM usuarios WHERE username = ?")) {
             stmt.setString(1, username);
             var rs = stmt.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 usuario = new Usuario();
                 usuario.setId(rs.getLong("id"));
                 usuario.setUsername(rs.getString("username"));

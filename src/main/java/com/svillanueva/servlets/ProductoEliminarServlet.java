@@ -1,25 +1,23 @@
 package com.svillanueva.servlets;
 
-import com.svillanueva.services.ProductServiceJdbcImpl;
 import com.svillanueva.services.ProductoService;
+import jakarta.inject.Inject;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.sql.Connection;
 
 @WebServlet("/producto/eliminar")
 public class ProductoEliminarServlet extends HttpServlet {
+
+    @Inject
+    private ProductoService productoService;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        Connection conn = (Connection) req.getAttribute("conn");
-        ProductoService productoService = new ProductServiceJdbcImpl(conn);
-
-
         long id;
-
         try {
             id = Long.parseLong(req.getParameter("id"));
         } catch (NumberFormatException e) {
