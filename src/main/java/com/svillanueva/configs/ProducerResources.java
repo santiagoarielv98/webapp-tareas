@@ -24,6 +24,7 @@ public class ProducerResources {
 
     @Produces
     @RequestScoped
+    @MySqlConn
     private Connection beanConnection() throws SQLException {
         return ds.getConnection();
     }
@@ -35,7 +36,7 @@ public class ProducerResources {
                 .getName());
     }
 
-    public void close(@Disposes Connection connection) throws SQLException {
+    public void close(@Disposes @MySqlConn Connection connection) throws SQLException {
         connection.close();
         log.info("cerrando la conexion a la Base de datos mysql!");
     }
