@@ -7,9 +7,9 @@ import jakarta.enterprise.inject.Produces;
 import java.util.ArrayList;
 import java.util.List;
 
-//@ApplicationScoped
+@ApplicationScoped
 public class ProducerResources {
-//    @Produces
+    @Produces
     public List<LineaFactura> produceLineasFactura() {
         List<LineaFactura> lineaFacturas = new ArrayList<>();
 

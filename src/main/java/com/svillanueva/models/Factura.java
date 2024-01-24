@@ -1,10 +1,15 @@
 package com.svillanueva.models;
 
 
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+
 import java.util.List;
 
-//@Named
-//@RequestScoped
+@Named
+@RequestScoped
 public class Factura {
     private Cliente cliente;
     private Integer numeroFactura;
@@ -14,7 +19,7 @@ public class Factura {
     public Factura() {
     }
 
-    //    @PostConstruct
+    @PostConstruct
     public void init() {
         this.setNumeroFactura(1);
         this.setDescripcion("Factura de prueba");
@@ -36,7 +41,7 @@ public class Factura {
         return descripcion;
     }
 
-    //    @Inject
+    @Inject
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }

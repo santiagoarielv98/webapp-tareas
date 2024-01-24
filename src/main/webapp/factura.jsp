@@ -16,7 +16,7 @@
 </head>
 <body>
 <main>
-    <h1>Ejemplo Factura con inyección de dependencia</h1>
+    <h1>Ejemplo Factura con inyección de dependencia 2</h1>
     <ul class="list-group">
 <%--        <li class="list-group-item">Factura: ${factura.numeroFactura}</li>--%>
 <%--        <li class="list-group-item">Factura Oficina del cliente: ${factura.cliente.nombre}</li>--%>

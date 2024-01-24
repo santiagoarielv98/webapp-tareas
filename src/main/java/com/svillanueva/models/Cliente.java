@@ -1,7 +1,10 @@
 package com.svillanueva.models;
 
 
-//@RequestScoped
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.RequestScoped;
+
+@RequestScoped
 public class Cliente {
     private String nombre;
     private String email;
@@ -10,7 +13,7 @@ public class Cliente {
     public Cliente() {
     }
 
-    //    @PostConstruct
+    @PostConstruct
     public void init() {
         this.setNombre("Santiago");
         this.setEmail("santiago@udemy.com");
