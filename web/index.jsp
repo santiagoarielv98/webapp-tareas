@@ -1,4 +1,4 @@
-<jsp:include page="layout/header.jsp"/>
+w<jsp:include page="layout/header.jsp"/>
 
 <h3>${requestScope.title}</h3>
 
