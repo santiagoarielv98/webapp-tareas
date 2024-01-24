@@ -1,6 +1,8 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" import="java.time.format.*"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<jsp:include page="layout/header.jsp" />
+<%--@elvariable id="curso" type="com.svillanueva.models.Curso"--%>
+<%--@elvariable id="titulo" type="java.lang.String"--%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:include page="layout/header.jsp"/>
 <h1>${titulo}</h1>
 <p><a href="${pageContext.request.contextPath}/cursos" class="btn btn-light">volver</a></p>
 <form action="${pageContext.request.contextPath}/cursos/form" method="post">
@@ -9,6 +11,7 @@
         <div class="col-sm-4">
             <input type="text" name="nombre" id="nombre" value="${curso.nombre}" class="form-control">
         </div>
+        <%--@elvariable id="errores" type="java.util.Map"--%>
         <c:if test="${errores != null && errores.containsKey('nombre')}">
             <div style="color:red;">${errores.nombre}</div>
         </c:if>
@@ -25,7 +28,8 @@
     <div class="row mb-2">
         <label for="duracion" class="col-form-label col-sm-2">Duracion</label>
         <div class="col-sm-4">
-            <input type="text" name="duracion" id="duracion" value="${curso.duracion != null && curso.duracion > 0? curso.duracion: ""}" class="form-control">
+            <input type="text" name="duracion" id="duracion"
+                   value="${curso.duracion != null && curso.duracion > 0? curso.duracion: ""}" class="form-control">
         </div>
         <c:if test="${errores != null && errores.containsKey('duracion')}">
             <div style="color:red;">${errores.duracion}</div>
@@ -41,8 +45,9 @@
         </c:if>
     </div>
     <div class="row mb-6">
-        <div><input type="submit" value="${curso.id!=null && curso.id>0? "Editar": "Crear"}" class="btn btn-primary"></div>
+        <div><input type="submit" value="${curso.id!=null && curso.id>0? "Editar": "Crear"}" class="btn btn-primary">
+        </div>
     </div>
     <input type="hidden" name="id" value="${curso.id}">
 </form>
-<jsp:include page="layout/footer.jsp" />
+<jsp:include page="layout/footer.jsp"/>

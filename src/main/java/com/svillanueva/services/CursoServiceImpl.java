@@ -1,14 +1,14 @@
-package org.aguzman.apiservlet.webapp.jdbc.tarea.services;
+package com.svillanueva.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import org.aguzman.apiservlet.webapp.jdbc.tarea.models.Curso;
-import org.aguzman.apiservlet.webapp.jdbc.tarea.repositories.Repository;
+import com.svillanueva.models.Curso;
+import com.svillanueva.repositories.Repository;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-import org.aguzman.apiservlet.webapp.jdbc.tarea.interceptors.TransactionalJdbc;
+import com.svillanueva.interceptors.TransactionalJdbc;
 
 @ApplicationScoped
 public class CursoServiceImpl implements CursoService{

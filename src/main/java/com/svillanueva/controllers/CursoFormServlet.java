@@ -1,7 +1,8 @@
-package org.aguzman.apiservlet.webapp.jdbc.tarea.controllers;
+package com.svillanueva.controllers;
 
+import com.svillanueva.models.Curso;
+import com.svillanueva.services.CursoService;
 import jakarta.inject.Inject;
-import org.aguzman.apiservlet.webapp.jdbc.tarea.services.CursoService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -12,7 +13,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import org.aguzman.apiservlet.webapp.jdbc.tarea.models.Curso;
 
 @WebServlet("/cursos/form")
 public class CursoFormServlet extends HttpServlet {
@@ -37,7 +37,8 @@ public class CursoFormServlet extends HttpServlet {
         }
         req.setAttribute("curso", curso);
         req.setAttribute("titulo", id > 0 ? "Tarea: Editar curso" : "Tarea 10: Crear curso");
-        getServletContext().getRequestDispatcher("/form.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/form.jsp")
+                .forward(req, resp);
     }
 
     @Override
@@ -89,7 +90,8 @@ public class CursoFormServlet extends HttpServlet {
             req.setAttribute("errores", errores);
             req.setAttribute("curso", curso);
             req.setAttribute("titulo", id > 0 ? "Tarea: Editar curso" : "Tarea 10: Crear curso");
-            getServletContext().getRequestDispatcher("/form.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/form.jsp")
+                    .forward(req, resp);
         }
     }
 }

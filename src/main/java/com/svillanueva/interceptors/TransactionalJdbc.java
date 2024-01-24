@@ -1,4 +1,4 @@
-package org.aguzman.apiservlet.webapp.jdbc.tarea.interceptors;
+package com.svillanueva.interceptors;
 
 import jakarta.interceptor.InterceptorBinding;
 

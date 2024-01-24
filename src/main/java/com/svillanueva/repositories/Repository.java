@@ -1,4 +1,4 @@
-package org.aguzman.apiservlet.webapp.jdbc.tarea.repositories;
+package com.svillanueva.repositories;
 
 import java.sql.SQLException;
 import java.util.List;

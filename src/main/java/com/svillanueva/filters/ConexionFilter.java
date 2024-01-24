@@ -1,9 +1,9 @@
-package org.aguzman.apiservlet.webapp.jdbc.tarea.filters;
+package com.svillanueva.filters;
 
+import com.svillanueva.services.ServiceJdbcException;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletResponse;
-import org.aguzman.apiservlet.webapp.jdbc.tarea.services.ServiceJdbcException;
 
 import java.io.IOException;
 
@@ -17,7 +17,6 @@ public class ConexionFilter implements Filter {
             chain.doFilter(request, response);
         } catch (ServiceJdbcException e) {
             ((HttpServletResponse) response).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
-            e.printStackTrace();
         }
     }
 }

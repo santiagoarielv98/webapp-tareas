@@ -1,4 +1,4 @@
-package org.aguzman.apiservlet.webapp.jdbc.tarea.models;
+package com.svillanueva.models;
 
 public class Curso {
     

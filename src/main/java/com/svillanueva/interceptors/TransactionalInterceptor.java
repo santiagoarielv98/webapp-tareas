@@ -1,4 +1,4 @@
-package org.aguzman.apiservlet.webapp.jdbc.tarea.interceptors;
+package com.svillanueva.interceptors;
 
 import jakarta.inject.Inject;
 import jakarta.interceptor.AroundInvoke;
@@ -7,7 +7,7 @@ import jakarta.interceptor.InvocationContext;
 
 import java.sql.Connection;
 import java.util.logging.Logger;
-import org.aguzman.apiservlet.webapp.jdbc.tarea.services.ServiceJdbcException;
+import com.svillanueva.services.ServiceJdbcException;
 
 @TransactionalJdbc
 @Interceptor

@@ -1,6 +1,6 @@
-package org.aguzman.apiservlet.webapp.jdbc.tarea.services;
+package com.svillanueva.services;
 
-import org.aguzman.apiservlet.webapp.jdbc.tarea.models.Curso;
+import com.svillanueva.models.Curso;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,8 +1,8 @@
-package org.aguzman.apiservlet.webapp.jdbc.tarea.repositories;
+package com.svillanueva.repositories;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import org.aguzman.apiservlet.webapp.jdbc.tarea.models.Curso;
+import com.svillanueva.models.Curso;
 
 import java.sql.*;
 import java.util.ArrayList;
