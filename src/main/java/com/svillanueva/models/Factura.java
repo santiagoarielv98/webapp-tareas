@@ -1,6 +1,7 @@
 package com.svillanueva.models;
 
 
+import com.svillanueva.resources.LineasFacturaQualifier;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
@@ -14,6 +15,8 @@ public class Factura {
     private Cliente cliente;
     private Integer numeroFactura;
     private String descripcion;
+    @Inject
+    @LineasFacturaQualifier
     private List<LineaFactura> lineasFactura;
 
     public Factura() {

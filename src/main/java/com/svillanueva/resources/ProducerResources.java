@@ -4,14 +4,15 @@ import com.svillanueva.models.LineaFactura;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @ApplicationScoped
+
 public class ProducerResources {
     @Produces
+    @LineasFacturaQualifier
     public List<LineaFactura> produceLineasFactura() {
-        List<LineaFactura> lineaFacturas = new ArrayList<>();
 
         LineaFactura lineaProducto1 = new LineaFactura();
         LineaFactura lineaProducto2 = new LineaFactura();
@@ -28,11 +29,7 @@ public class ProducerResources {
         lineaProducto3.setCantidad(99);
         lineaProducto3.setPrecio(2);
 
-        lineaFacturas.add(lineaProducto1);
-        lineaFacturas.add(lineaProducto2);
-        lineaFacturas.add(lineaProducto3);
-
-        return lineaFacturas;
+        return Arrays.asList(lineaProducto1, lineaProducto2, lineaProducto3);
     }
 
 }
