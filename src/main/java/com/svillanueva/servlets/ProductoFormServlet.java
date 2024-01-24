@@ -3,7 +3,7 @@ package com.svillanueva.servlets;
 import com.svillanueva.models.Categoria;
 import com.svillanueva.models.Producto;
 import com.svillanueva.services.ProductServiceJdbcImpl;
-import com.svillanueva.tarea3.services.ProductoService;
+import com.svillanueva.services.ProductoService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

@@ -5,7 +5,6 @@ import com.svillanueva.models.Producto;
 import com.svillanueva.repositories.CategoriaRepositoryImpl;
 import com.svillanueva.repositories.ProductoRepositoryJdbcImpl;
 import com.svillanueva.repositories.Repository;
-import com.svillanueva.tarea3.services.ProductoService;
 
 import java.sql.Connection;
 import java.sql.SQLException;

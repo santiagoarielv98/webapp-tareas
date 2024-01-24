@@ -1,4 +1,4 @@
-package com.svillanueva.tarea3.services;
+package com.svillanueva.services;
 
 import com.svillanueva.models.Categoria;
 import com.svillanueva.models.Producto;

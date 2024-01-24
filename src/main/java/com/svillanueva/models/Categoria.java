@@ -1,4 +1,4 @@
-package com.curso.models;
+package com.svillanueva.models;
 
 public class Categoria {
     private Long id;

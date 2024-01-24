@@ -1,7 +1,7 @@
 package com.svillanueva.filters;
 
-import com.svillanueva.tarea6.services.LoginService;
-import com.svillanueva.tarea6.services.LoginServiceSessionImpl;
+import com.svillanueva.services.LoginService;
+import com.svillanueva.services.LoginServiceSessionImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
