@@ -16,7 +16,7 @@ public class ProductoRepositoryJPAImpl implements CrudRepository<Producto> {
 
     @Override
     public List<Producto> listar() throws Exception {
-        return em.createQuery("SELECT p FROM Producto p", Producto.class)
+        return em.createQuery("SELECT p FROM Producto p left outer join fetch p.categoria", Producto.class)
                 .getResultList();
     }
 

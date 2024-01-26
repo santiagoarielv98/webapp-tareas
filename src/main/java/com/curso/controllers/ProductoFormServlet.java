@@ -28,7 +28,7 @@ public class ProductoFormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        long id;
+        Long id;
         id = getId(req);
         Producto producto = new Producto();
         producto.setCategoria(new Categoria());
@@ -46,12 +46,12 @@ public class ProductoFormServlet extends HttpServlet {
                 .forward(req, resp);
     }
 
-    public static long getId(HttpServletRequest req) {
-        long id;
+    public static Long getId(HttpServletRequest req) {
+        Long id;
         try {
             id = Long.parseLong(req.getParameter("id"));
         } catch (NumberFormatException e) {
-            id = 0L;
+            id = null;
         }
         return id;
     }
