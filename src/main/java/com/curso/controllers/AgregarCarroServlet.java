@@ -2,10 +2,9 @@ package com.curso.controllers;
 
 import com.curso.models.Carro;
 import com.curso.models.ItemCarro;
-import com.curso.models.Producto;
+import com.curso.models.entities.Producto;
 import com.curso.services.ProductoService;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

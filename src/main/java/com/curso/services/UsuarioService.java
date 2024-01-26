@@ -1,6 +1,6 @@
 package com.curso.services;
 
-import com.curso.models.Usuario;
+import com.curso.models.entities.Usuario;
 
 import java.sql.SQLException;
 import java.util.List;

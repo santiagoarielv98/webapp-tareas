@@ -1,5 +1,6 @@
 package com.curso.configs;
 
+import com.curso.util.JpaUtil;
 import jakarta.annotation.Resource;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;
@@ -7,6 +8,7 @@ import jakarta.enterprise.inject.Disposes;
 import jakarta.enterprise.inject.Produces;
 import jakarta.enterprise.inject.spi.InjectionPoint;
 import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -40,5 +42,17 @@ public class ProducerResources {
         return Logger.getLogger(ip.getMember()
                 .getDeclaringClass()
                 .getName());
+    }
+
+    @Produces
+    @RequestScoped
+    private EntityManager beanEntityManager() {
+        return JpaUtil.getEntityManager();
+    }
+
+    public void closeEntityManager(@Disposes EntityManager em) {
+        if (em.isOpen()) {
+            em.close();
+        }
     }
 }

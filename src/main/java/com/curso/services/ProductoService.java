@@ -1,7 +1,7 @@
 package com.curso.services;
 
-import com.curso.models.Categoria;
-import com.curso.models.Producto;
+import com.curso.models.entities.Categoria;
+import com.curso.models.entities.Producto;
 
 import java.util.List;
 import java.util.Optional;

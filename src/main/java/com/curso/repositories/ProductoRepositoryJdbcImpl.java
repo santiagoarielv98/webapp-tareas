@@ -2,8 +2,8 @@ package com.curso.repositories;
 
 import com.curso.configs.MySqlConn;
 import com.curso.configs.Repository;
-import com.curso.models.Categoria;
-import com.curso.models.Producto;
+import com.curso.models.entities.Categoria;
+import com.curso.models.entities.Producto;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import jakarta.inject.Inject;
@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Repository
+@RepositoryJdbc
 public class ProductoRepositoryJdbcImpl implements CrudRepository<Producto> {
 
     @Inject

@@ -1,8 +1,8 @@
 package com.curso.controllers;
 
 import com.curso.configs.ProductoServicePrincipal;
-import com.curso.models.Categoria;
-import com.curso.models.Producto;
+import com.curso.models.entities.Categoria;
+import com.curso.models.entities.Producto;
 import com.curso.services.ProductoService;
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;

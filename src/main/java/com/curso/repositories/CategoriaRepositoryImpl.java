@@ -2,7 +2,7 @@ package com.curso.repositories;
 
 import com.curso.configs.MySqlConn;
 import com.curso.configs.Repository;
-import com.curso.models.Categoria;
+import com.curso.models.entities.Categoria;
 import jakarta.inject.Inject;
 
 import java.sql.*;
@@ -10,9 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+@RepositoryJdbc
 public class CategoriaRepositoryImpl implements CrudRepository<Categoria> {
 
     private final Connection conn;
+
 
     @Inject
     public CategoriaRepositoryImpl(@MySqlConn Connection conn) {

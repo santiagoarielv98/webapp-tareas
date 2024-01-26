@@ -1,5 +1,7 @@
 package com.curso.models;
 
+import com.curso.models.entities.Producto;
+
 import java.util.Objects;
 
 public class ItemCarro {

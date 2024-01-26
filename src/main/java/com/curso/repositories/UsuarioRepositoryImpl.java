@@ -2,7 +2,7 @@ package com.curso.repositories;
 
 import com.curso.configs.MySqlConn;
 import com.curso.configs.Repository;
-import com.curso.models.Usuario;
+import com.curso.models.entities.Usuario;
 import jakarta.inject.Inject;
 
 import java.sql.Connection;
@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+@RepositoryJdbc
 public class UsuarioRepositoryImpl implements UsuarioRepository {
 
     @Inject

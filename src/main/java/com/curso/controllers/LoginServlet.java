@@ -1,6 +1,6 @@
 package com.curso.controllers;
 
-import com.curso.models.Usuario;
+import com.curso.models.entities.Usuario;
 import com.curso.services.LoginService;
 import com.curso.services.UsuarioService;
 import jakarta.inject.Inject;
