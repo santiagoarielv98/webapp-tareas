@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="webapp-tareas:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ab104bc-125d-485d-9e9f-dc97aab989d2" name="Changes" comment="migrando a hibernate 2" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="cdi.beans_4_0" />
+        <option value="Interface" />
+        <option value="cdi.beans_3_0" />
+        <option value="Class" />
+        <option value="AnnotationType" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;santiagoarielv98&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="078b758d-f4b2-4ebd-8062-1d2244d74cb7" />
+        <option name="url" value="https://github.com/santiagoarielv98/webapp-cookie-tarea4.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2azpD4SP4jWAbfZ3No1duCiUxVr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.webapp-tareas [clean].executor": "Run",
+    "Maven.webapp-tareas [install].executor": "Run",
+    "Maven.webapp-tareas [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.webapp-tareas [org.apache.maven.plugins:maven-deploy-plugin:3.1.1:deploy].executor": "Run",
+    "Maven.webapp-tareas [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor": "Run",
+    "Maven.webapp-tareas [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor": "Run",
+    "Maven.webapp-tareas [org.apache.maven.plugins:maven-site-plugin:3.12.1:deploy].executor": "Run",
+    "Maven.webapp-tareas [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:deploy-only].executor": "Run",
+    "Maven.webapp-tareas [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:deploy].executor": "Run",
+    "Maven.webapp-tareas [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:redeploy].executor": "Run",
+    "Maven.webapp-tareas [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run-war].executor": "Run",
+    "Maven.webapp-tareas [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run].executor": "Run",
+    "Maven.webapp-tareas [validate].executor": "Run",
+    "Maven.webapp-tareas-15 [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run].executor": "Run",
+    "Maven.webapp-tareas-curso [clean].executor": "Run",
+    "Maven.webapp-tareas-curso [install].executor": "Run",
+    "Maven.webapp-tareas-curso [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:deploy].executor": "Run",
+    "Maven.webapp-tareas-curso [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:redeploy].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Tomcat Server.2.executor": "Run",
+    "Tomcat Server.Tomcat 10.1.18.executor": "Run",
+    "Tomcat Server.index.jsp.executor": "Run",
+    "git-widget-placeholder": "hibernate",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "D:/Proyecto/webapp-tareas/src/main/java/com/svillanueva/tarea9",
+    "last_opened_file_path": "D:/Proyecto/webapp-tareas",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15136719",
+    "project.structure.side.proportion": "0.26256984",
+    "service.view.auto.scroll.from.source": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "mariadb"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.svillanueva.services" />
+      <recent name="com.svillanueva.models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Proyecto\webapp-tareas\src\main" />
+      <recent name="D:\Proyecto\webapp-tareas\src\main\java\com\svillanueva" />
+      <recent name="D:\Proyecto\webapp-tareas\src\main\web\lib" />
+      <recent name="D:\Proyecto\webapp-tareas\web\web\WEB-INF" />
+      <recent name="D:\Proyecto\webapp-tareas\web\curso" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Proyecto\webapp-tareas\src\main\java" />
+      <recent name="D:\Proyecto\webapp-tareas\src" />
+      <recent name="D:\Proyecto\webapp-tareas\src\main\java\com\svillanueva" />
+      <recent name="D:\Proyecto\webapp-tareas\web" />
+      <recent name="D:\Proyecto\webapp-tareas\src\main\webapp\WEB-INF" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.curso.interceptors" />
+      <recent name="com.curso.repositories" />
+      <recent name="com.curso.configs" />
+      <recent name="com.curso.util" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="2" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.18" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="webapp-tareas:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/webapp_tareas_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="b80814a9-90d5-4045-b671-1f7a1fe0036d" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="53184" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.18" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="bd10e53f-bd30-4db6-82e0-5a3bd408a1bc" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="53184" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ab104bc-125d-485d-9e9f-dc97aab989d2" name="Changes" comment="" />
+      <created>1705331185179</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705331185179</updated>
+      <workItem from="1705331186219" duration="869000" />
+      <workItem from="1705332063168" duration="99000" />
+      <workItem from="1705332247632" duration="5062000" />
+      <workItem from="1705408607228" duration="25643000" />
+      <workItem from="1705462406184" duration="3219000" />
+      <workItem from="1705497334416" duration="48959000" />
+      <workItem from="1705622777618" duration="25656000" />
+      <workItem from="1705873228991" duration="23650000" />
+      <workItem from="1705952169281" duration="2945000" />
+      <workItem from="1706014038228" duration="1731000" />
+      <workItem from="1706015813886" duration="129000" />
+      <workItem from="1706016058714" duration="11694000" />
+      <workItem from="1706052400850" duration="13672000" />
+      <workItem from="1706304441307" duration="3389000" />
+    </task>
+    <task id="LOCAL-00033" summary="avanzando en el curso">
+      <option name="closed" value="true" />
+      <created>1705599722755</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1705599722755</updated>
+    </task>
+    <task id="LOCAL-00034" summary="avanzando en el curso 2">
+      <option name="closed" value="true" />
+      <created>1705601230273</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1705601230273</updated>
+    </task>
+    <task id="LOCAL-00035" summary="avanzando en el curso 3">
+      <option name="closed" value="true" />
+      <created>1705610010908</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1705610010908</updated>
+    </task>
+    <task id="LOCAL-00036" summary="avanzando en el curso 4">
+      <option name="closed" value="true" />
+      <created>1705614657943</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1705614657943</updated>
+    </task>
+    <task id="LOCAL-00037" summary="avanzando en el curso 5">
+      <option name="closed" value="true" />
+      <created>1705614672459</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1705614672459</updated>
+    </task>
+    <task id="LOCAL-00038" summary="mejoras y imagenes">
+      <option name="closed" value="true" />
+      <created>1705615262903</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1705615262903</updated>
+    </task>
+    <task id="LOCAL-00039" summary="mejoras">
+      <option name="closed" value="true" />
+      <created>1705621081007</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1705621081007</updated>
+    </task>
+    <task id="LOCAL-00040" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1705622354903</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1705622354903</updated>
+    </task>
+    <task id="LOCAL-00041" summary="entiendo mejoras las cosas">
+      <option name="closed" value="true" />
+      <created>1705625542711</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1705625542711</updated>
+    </task>
+    <task id="LOCAL-00042" summary="terminado otro ejercicio del curso">
+      <option name="closed" value="true" />
+      <created>1705634343003</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1705634343003</updated>
+    </task>
+    <task id="LOCAL-00043" summary="terminado otro ejercicio del curso (10 y 11)">
+      <option name="closed" value="true" />
+      <created>1705669319766</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1705669319766</updated>
+    </task>
+    <task id="LOCAL-00044" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1705679511452</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1705679511452</updated>
+    </task>
+    <task id="LOCAL-00045" summary="refactorizacion 1">
+      <option name="closed" value="true" />
+      <created>1705679904374</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1705679904374</updated>
+    </task>
+    <task id="LOCAL-00046" summary="refactorizacion 2">
+      <option name="closed" value="true" />
+      <created>1705682859053</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1705682859053</updated>
+    </task>
+    <task id="LOCAL-00047" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1705689854682</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1705689854684</updated>
+    </task>
+    <task id="LOCAL-00048" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1705874633265</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1705874633265</updated>
+    </task>
+    <task id="LOCAL-00049" summary="agregando pool de conexiones">
+      <option name="closed" value="true" />
+      <created>1705879936330</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1705879936331</updated>
+    </task>
+    <task id="LOCAL-00050" summary="agregando pool de conexiones 2">
+      <option name="closed" value="true" />
+      <created>1705879958311</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1705879958312</updated>
+    </task>
+    <task id="LOCAL-00051" summary="agregando cdi">
+      <option name="closed" value="true" />
+      <created>1705898663670</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1705898663670</updated>
+    </task>
+    <task id="LOCAL-00052" summary="agregando inyeccion de dependencias">
+      <option name="closed" value="true" />
+      <created>1705900495872</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1705900495872</updated>
+    </task>
+    <task id="LOCAL-00053" summary=" inyeccion de dependencias 2">
+      <option name="closed" value="true" />
+      <created>1705922642328</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1705922642330</updated>
+    </task>
+    <task id="LOCAL-00054" summary="anotacion Disposes">
+      <option name="closed" value="true" />
+      <created>1705922921675</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1705922921675</updated>
+    </task>
+    <task id="LOCAL-00055" summary="anotacion @Postcontruct y @Predestroy">
+      <option name="closed" value="true" />
+      <created>1705924452959</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1705924452959</updated>
+    </task>
+    <task id="LOCAL-00056" summary="interceptors">
+      <option name="closed" value="true" />
+      <created>1705926439416</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1705926439416</updated>
+    </task>
+    <task id="LOCAL-00057" summary="interceptors 2">
+      <option name="closed" value="true" />
+      <created>1705926477039</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1705926477040</updated>
+    </task>
+    <task id="LOCAL-00058" summary="rama para tareas">
+      <option name="closed" value="true" />
+      <created>1705952319986</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1705952319986</updated>
+    </task>
+    <task id="LOCAL-00059" summary="rama para tareas">
+      <option name="closed" value="true" />
+      <created>1705952423608</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1705952423608</updated>
+    </task>
+    <task id="LOCAL-00060" summary="rama para tareas">
+      <option name="closed" value="true" />
+      <created>1705954814191</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1705954814191</updated>
+    </task>
+    <task id="LOCAL-00061" summary="tareas limpio">
+      <option name="closed" value="true" />
+      <created>1706016930208</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1706016930209</updated>
+    </task>
+    <task id="LOCAL-00062" summary="idea">
+      <option name="closed" value="true" />
+      <created>1706017011050</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1706017011050</updated>
+    </task>
+    <task id="LOCAL-00063" summary="cambios">
+      <option name="closed" value="true" />
+      <created>1706018844882</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1706018844882</updated>
+    </task>
+    <task id="LOCAL-00064" summary="agregando beans.xml">
+      <option name="closed" value="true" />
+      <created>1706018893471</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1706018893471</updated>
+    </task>
+    <task id="LOCAL-00065" summary="agregando beans.xml">
+      <option name="closed" value="true" />
+      <created>1706024968662</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1706024968662</updated>
+    </task>
+    <task id="LOCAL-00066" summary="mas coomit">
+      <option name="closed" value="true" />
+      <created>1706027869230</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1706027869230</updated>
+    </task>
+    <task id="LOCAL-00067" summary="mas coomit 2">
+      <option name="closed" value="true" />
+      <created>1706028343120</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1706028343120</updated>
+    </task>
+    <task id="LOCAL-00068" summary="mas commit 3">
+      <option name="closed" value="true" />
+      <created>1706094831837</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1706094831840</updated>
+    </task>
+    <task id="LOCAL-00069" summary="avance">
+      <option name="closed" value="true" />
+      <created>1706097778200</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1706097778200</updated>
+    </task>
+    <task id="LOCAL-00070" summary="avance">
+      <option name="closed" value="true" />
+      <created>1706098885672</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1706098885672</updated>
+    </task>
+    <task id="LOCAL-00071" summary="cambios en el curo">
+      <option name="closed" value="true" />
+      <created>1706101541405</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1706101541406</updated>
+    </task>
+    <task id="LOCAL-00072" summary="cambios curso">
+      <option name="closed" value="true" />
+      <created>1706103918237</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1706103918237</updated>
+    </task>
+    <task id="LOCAL-00073" summary="refactorizacion">
+      <option name="closed" value="true" />
+      <created>1706104398451</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1706104398451</updated>
+    </task>
+    <task id="LOCAL-00074" summary="refactorizacion">
+      <option name="closed" value="true" />
+      <created>1706105464396</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1706105464396</updated>
+    </task>
+    <task id="LOCAL-00075" summary="refactorizacion">
+      <option name="closed" value="true" />
+      <created>1706105962726</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1706105962726</updated>
+    </task>
+    <task id="LOCAL-00076" summary="refactorizacion 2">
+      <option name="closed" value="true" />
+      <created>1706108027741</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1706108027741</updated>
+    </task>
+    <task id="LOCAL-00077" summary="refactorizacion 2">
+      <option name="closed" value="true" />
+      <created>1706108249960</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1706108249961</updated>
+    </task>
+    <task id="LOCAL-00078" summary="completado">
+      <option name="closed" value="true" />
+      <created>1706108998608</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1706108998608</updated>
+    </task>
+    <task id="LOCAL-00079" summary="uwu">
+      <option name="closed" value="true" />
+      <created>1706304870426</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1706304870427</updated>
+    </task>
+    <task id="LOCAL-00080" summary="migrando a hibernate">
+      <option name="closed" value="true" />
+      <created>1706307309425</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1706307309425</updated>
+    </task>
+    <task id="LOCAL-00081" summary="migrando a hibernate 2">
+      <option name="closed" value="true" />
+      <created>1706307624726</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1706307624726</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="agregando pool de conexiones 2" />
+    <MESSAGE value="agregando cdi" />
+    <MESSAGE value="agregando inyeccion de dependencias" />
+    <MESSAGE value=" inyeccion de dependencias 2" />
+    <MESSAGE value="anotacion Disposes" />
+    <MESSAGE value="anotacion @Postcontruct y @Predestroy" />
+    <MESSAGE value="interceptors" />
+    <MESSAGE value="interceptors 2" />
+    <MESSAGE value="rama para tareas" />
+    <MESSAGE value="tareas limpio" />
+    <MESSAGE value="idea" />
+    <MESSAGE value="cambios" />
+    <MESSAGE value="agregando beans.xml" />
+    <MESSAGE value="mas coomit" />
+    <MESSAGE value="mas coomit 2" />
+    <MESSAGE value="mas commit 3" />
+    <MESSAGE value="avance" />
+    <MESSAGE value="cambios en el curo" />
+    <MESSAGE value="cambios curso" />
+    <MESSAGE value="refactorizacion" />
+    <MESSAGE value="refactorizacion 2" />
+    <MESSAGE value="completado" />
+    <MESSAGE value="uwu" />
+    <MESSAGE value="migrando a hibernate" />
+    <MESSAGE value="migrando a hibernate 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrando a hibernate 2" />
+  </component>
+</project>
