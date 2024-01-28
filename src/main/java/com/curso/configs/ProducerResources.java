@@ -23,7 +23,7 @@ public class ProducerResources {
     private Logger logger;
 
 
-    @Resource(lookup = "Java:/MySqlDS")
+    @Resource(lookup = "java:/MySqlDS")
     private DataSource ds;
 
     @PersistenceUnit(name = "ejemplo")

@@ -9,83 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ab104bc-125d-485d-9e9f-dc97aab989d2" name="Changes" comment="migrando a hibernate 2">
+    <list default="true" id="4ab104bc-125d-485d-9e9f-dc97aab989d2" name="Changes" comment="migrando a ejb">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/curso/carro.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/curso/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/curso/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/curso/layout/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/curso/layout/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/curso/listar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/curso/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/configs/ProducerResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/configs/ProducerResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/configs/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/configs/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/controllers/ActualizarCarroServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/controllers/ActualizarCarroServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/controllers/UsuarioFormServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/controllers/UsuarioFormServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/controllers/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/controllers/UsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/interceptors/TransactionalInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/interceptors/TransactionalJPAInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/interceptors/TransactionalJdbc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/interceptors/TransactionalJpa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/controllers/AgregarCarroServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/controllers/AgregarCarroServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/filters/ConexionFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/filters/ConexionFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/repositories/CategoriaRepositoryJPAImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/repositories/CategoriaRepositoryJPAImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/repositories/ProductoRepositoryJPAImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/repositories/ProductoRepositoryJPAImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/services/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/services/ProductoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/services/ProductoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/services/ProductoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/services/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/services/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/services/UsuarioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/curso/services/UsuarioServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/util/ConexionBaseDatos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/util/ConexionBaseDatosDS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/curso/util/JpaUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/filters/ConexionFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/filters/LoginFiltro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/listeners/ApplicationListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/models/Carro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/models/ItemCarro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/models/Producto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/models/Usuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/repositories/CategoriaRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/repositories/ProductoRepositoryJdbcImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/repositories/Repository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/repositories/UsuarioRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/repositories/UsuarioRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/resources/ProducerResources.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/services/ProductServiceJdbcImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/services/ServiceJdbcException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/services/UsuarioService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/services/UsuarioServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/servlets/ProductoEliminarServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/servlets/ProductoFormServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea1/IndexServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea2/RegistroProductoServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea3/BuscarProductoServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea3/services/ProductoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea3/services/ProductoServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea4/CambiarColorServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea5/GuardarNombreSessionServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea5/PerfilUsuarioServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea6/services/LoginService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea6/services/LoginServiceSessionImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea6/servlets/ActualizarCarroServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea6/servlets/AgregarCarroServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea6/servlets/LoginServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea6/servlets/LogoutServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea6/servlets/ProductoServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea6/servlets/VerCarroServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea7/ApplicationListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea7/IndexServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea8/TiempoTranscurridoFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/filters/ConexionFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/models/ConexionBaseDatos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/models/Curso.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/repositories/CursoRepositorioImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/repositories/Repository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/services/CursoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/services/CursoServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/servlets/BuscarCursoServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/servlets/CursoEliminarServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/servlets/CursoFormServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/tarea9/servlets/CursoServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svillanueva/util/ConexionDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/webapp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/webapp/META-INF/context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/webapp/WEB-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/webapp/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/webapp/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/webapp/web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/webapp/web/web/WEB-INF/web.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tarea-9/vista-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tarea-9/vista-10.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +88,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.webapp-jpa-ejb [clean].executor": "Run",
+    "Maven.webapp-jpa-ejb [install].executor": "Run",
+    "Maven.webapp-jpa-ejb [org.wildfly.plugins:wildfly-maven-plugin:5.0.0.Beta1:deploy].executor": "Run",
+    "Maven.webapp-jpa-ejb [org.wildfly.plugins:wildfly-maven-plugin:5.0.0.Beta1:redeploy].executor": "Run",
     "Maven.webapp-tareas [clean].executor": "Run",
     "Maven.webapp-tareas [install].executor": "Run",
     "Maven.webapp-tareas [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
@@ -158,7 +104,9 @@
     "Maven.webapp-tareas [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:redeploy].executor": "Run",
     "Maven.webapp-tareas [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run-war].executor": "Run",
     "Maven.webapp-tareas [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run].executor": "Run",
+    "Maven.webapp-tareas [org.wildfly.plugins:wildfly-maven-plugin:5.0.0.Beta1:deploy-artifact].executor": "Run",
     "Maven.webapp-tareas [org.wildfly.plugins:wildfly-maven-plugin:5.0.0.Beta1:deploy].executor": "Run",
+    "Maven.webapp-tareas [org.wildfly.plugins:wildfly-maven-plugin:5.0.0.Beta1:redeploy].executor": "Run",
     "Maven.webapp-tareas [validate].executor": "Run",
     "Maven.webapp-tareas-15 [org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run].executor": "Run",
     "Maven.webapp-tareas-curso [clean].executor": "Run",
@@ -208,11 +156,11 @@
       <recent name="D:\Proyecto\webapp-tareas\web\curso" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Proyecto\webapp-tareas\src\main\webapp\curso\layout" />
+      <recent name="D:\Proyecto\webapp-tareas\src\main\webapp\curso" />
       <recent name="D:\Proyecto\webapp-tareas\src\main\java" />
       <recent name="D:\Proyecto\webapp-tareas\src" />
       <recent name="D:\Proyecto\webapp-tareas\src\main\java\com\svillanueva" />
-      <recent name="D:\Proyecto\webapp-tareas\web" />
-      <recent name="D:\Proyecto\webapp-tareas\src\main\webapp\WEB-INF" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.curso.interceptors" />
@@ -415,15 +363,7 @@
       <workItem from="1706016058714" duration="11694000" />
       <workItem from="1706052400850" duration="13672000" />
       <workItem from="1706304441307" duration="3389000" />
-      <workItem from="1706398840434" duration="2313000" />
-    </task>
-    <task id="LOCAL-00034" summary="avanzando en el curso 2">
-      <option name="closed" value="true" />
-      <created>1705601230273</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1705601230273</updated>
+      <workItem from="1706398840434" duration="4525000" />
     </task>
     <task id="LOCAL-00035" summary="avanzando en el curso 3">
       <option name="closed" value="true" />
@@ -809,7 +749,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706398887312</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="migrando a ejb">
+      <option name="closed" value="true" />
+      <created>1706401315470</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1706401315470</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -839,7 +787,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="agregando pool de conexiones 2" />
     <MESSAGE value="agregando cdi" />
     <MESSAGE value="agregando inyeccion de dependencias" />
     <MESSAGE value=" inyeccion de dependencias 2" />
@@ -864,6 +811,7 @@
     <MESSAGE value="uwu" />
     <MESSAGE value="migrando a hibernate" />
     <MESSAGE value="migrando a hibernate 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrando a hibernate 2" />
+    <MESSAGE value="migrando a ejb" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrando a ejb" />
   </component>
 </project>

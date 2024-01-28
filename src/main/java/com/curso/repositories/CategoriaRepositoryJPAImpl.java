@@ -11,7 +11,6 @@ import java.util.List;
 
 @RepositoryJPA
 @Repository
-@Named("categoriaRepositoryJPAImpl")
 public class CategoriaRepositoryJPAImpl implements CrudRepository<Categoria> {
     @Inject
     private EntityManager em;

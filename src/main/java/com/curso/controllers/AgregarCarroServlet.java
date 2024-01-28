@@ -1,5 +1,6 @@
 package com.curso.controllers;
 
+import com.curso.configs.ProductoServicePrincipal;
 import com.curso.models.Carro;
 import com.curso.models.ItemCarro;
 import com.curso.models.entities.Producto;
@@ -18,6 +19,7 @@ import java.util.Optional;
 public class AgregarCarroServlet extends HttpServlet {
 
     @Inject
+    @ProductoServicePrincipal
     private ProductoService service;
     @Inject
     private Carro carro;

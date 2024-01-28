@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 @RepositoryJPA
-@Named("productoRepositoryJPAImpl")
 public class ProductoRepositoryJPAImpl implements CrudRepository<Producto> {
 
     @Inject

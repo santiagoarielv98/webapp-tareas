@@ -8,7 +8,6 @@ import com.curso.repositories.CrudRepository;
 import com.curso.repositories.RepositoryJPA;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,12 +19,10 @@ import java.util.Optional;
 public class ProductoServiceImpl implements ProductoService {
     @Inject
     @RepositoryJPA
-    @Named("productoRepositoryJPAImpl")
     private CrudRepository<Producto> repositoryJdbc;
 
     @Inject
     @RepositoryJPA
-    @Named("categoriaRepositoryJPAImpl")
     private CrudRepository<Categoria> repositoryCategoriaJdbc;
 
 
