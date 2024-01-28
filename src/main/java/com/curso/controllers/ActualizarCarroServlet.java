@@ -21,12 +21,8 @@ public class ActualizarCarroServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        HttpSession session = req.getSession();
-//        if (session.getAttribute("carro") != null) {
-//            Carro carro = (Carro) session.getAttribute("carro");
         updateProductos(req, carro);
         updateCantidades(req, carro);
-//        }
 
         resp.sendRedirect(req.getContextPath() + "/curso/carro/ver");
     }
@@ -36,7 +32,6 @@ public class ActualizarCarroServlet extends HttpServlet {
 
         if (deleteIds != null && deleteIds.length > 0) {
             List<String> productoIds = Arrays.asList(deleteIds);
-            // Borramos los productos del carrito.
             carro.removeProductos(productoIds);
         }
 

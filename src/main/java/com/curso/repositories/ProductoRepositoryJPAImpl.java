@@ -1,14 +1,16 @@
 package com.curso.repositories;
 
 import com.curso.configs.Repository;
-import com.svillanueva.models.Producto;
+import com.curso.models.entities.Producto;
 import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 
 import java.util.List;
 
 @Repository
 @RepositoryJPA
+@Named("productoRepositoryJPAImpl")
 public class ProductoRepositoryJPAImpl implements CrudRepository<Producto> {
 
     @Inject

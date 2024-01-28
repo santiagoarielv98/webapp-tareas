@@ -3,6 +3,7 @@ package com.curso.repositories;
 import com.curso.configs.Repository;
 import com.curso.models.entities.Categoria;
 import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RepositoryJPA
 @Repository
+@Named("categoriaRepositoryJPAImpl")
 public class CategoriaRepositoryJPAImpl implements CrudRepository<Categoria> {
     @Inject
     private EntityManager em;

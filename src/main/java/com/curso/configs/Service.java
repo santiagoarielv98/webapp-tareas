@@ -1,8 +1,6 @@
 package com.curso.configs;
 
 import com.curso.interceptors.Logging;
-import com.curso.interceptors.TransactionalJdbc;
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Stereotype;
 import jakarta.inject.Named;
 
@@ -13,7 +11,6 @@ import java.lang.annotation.Target;
 
 
 @Logging
-@ApplicationScoped
 @Stereotype
 @Named
 @Target(ElementType.TYPE)

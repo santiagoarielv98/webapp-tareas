@@ -1,8 +1,8 @@
-<%@ page import="com.svillanueva.models.Categoria" %>
+<%@ page import="com.curso.models.entities.Categoria" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.Optional" %>
-<%@ page import="com.svillanueva.models.Producto" %>
+<%@ page import="com.curso.models.entities.Producto" %>
 <%@ page import="java.util.Objects" %><%--
   Created by IntelliJ IDEA.
   User: santi

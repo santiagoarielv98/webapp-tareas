@@ -18,11 +18,11 @@ import java.util.Optional;
 @WebServlet({"/curso/usuarios.html", "/curso/usuarios"})
 public class UsuarioServlet extends HttpServlet {
     @Inject
-    private UsuarioService service;
+    private UsuarioService usuarioService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Usuario> usuarios = service.listar();
+        List<Usuario> usuarios = usuarioService.listar();
 
         LoginService auth = new LoginServiceSessionImpl();
         Optional<String> usernameOptional = auth.getUsername(req);

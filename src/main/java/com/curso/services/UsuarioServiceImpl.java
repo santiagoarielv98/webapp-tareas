@@ -1,10 +1,10 @@
 package com.curso.services;
 
 import com.curso.configs.Service;
-import com.curso.interceptors.TransactionalJpa;
 import com.curso.models.entities.Usuario;
 import com.curso.repositories.RepositoryJPA;
 import com.curso.repositories.UsuarioRepository;
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 
 @Service
-@TransactionalJpa
+@Stateless
 public class UsuarioServiceImpl implements UsuarioService {
 
 

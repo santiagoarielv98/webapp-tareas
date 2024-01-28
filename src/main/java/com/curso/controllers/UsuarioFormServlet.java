@@ -17,7 +17,7 @@ import java.util.Optional;
 @WebServlet("/curso/usuarios/form")
 public class UsuarioFormServlet extends HttpServlet {
     @Inject
-    private UsuarioService service;
+    private UsuarioService usuarioService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class UsuarioFormServlet extends HttpServlet {
         Usuario usuario = new Usuario();
 
         if (id > 0) {
-            Optional<Usuario> o = service.porId(id);
+            Optional<Usuario> o = usuarioService.porId(id);
             if (o.isPresent()) {
                 usuario = o.get();
             }
@@ -67,7 +67,7 @@ public class UsuarioFormServlet extends HttpServlet {
 
 
         if (errores.isEmpty()) {
-            service.guardar(usuario);
+            usuarioService.guardar(usuario);
             resp.sendRedirect(req.getContextPath() + "/curso/usuarios");
         } else {
             req.setAttribute("errores", errores);

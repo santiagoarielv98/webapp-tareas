@@ -2,12 +2,13 @@ package com.curso.services;
 
 import com.curso.configs.ProductoServicePrincipal;
 import com.curso.configs.Service;
-import com.curso.interceptors.TransactionalJpa;
 import com.curso.models.entities.Categoria;
 import com.curso.models.entities.Producto;
 import com.curso.repositories.CrudRepository;
 import com.curso.repositories.RepositoryJPA;
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,15 +16,16 @@ import java.util.Optional;
 
 @Service
 @ProductoServicePrincipal
-@TransactionalJpa
-//@Named("productoServiceJdbc")
+@Stateless
 public class ProductoServiceImpl implements ProductoService {
     @Inject
     @RepositoryJPA
+    @Named("productoRepositoryJPAImpl")
     private CrudRepository<Producto> repositoryJdbc;
 
     @Inject
     @RepositoryJPA
+    @Named("categoriaRepositoryJPAImpl")
     private CrudRepository<Categoria> repositoryCategoriaJdbc;
 
 

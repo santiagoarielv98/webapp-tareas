@@ -1,6 +1,5 @@
 package com.curso.configs;
 
-import com.curso.util.JpaUtil;
 import jakarta.annotation.Resource;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;
@@ -9,6 +8,8 @@ import jakarta.enterprise.inject.Produces;
 import jakarta.enterprise.inject.spi.InjectionPoint;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.PersistenceUnit;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -22,8 +23,11 @@ public class ProducerResources {
     private Logger logger;
 
 
-    @Resource(name = "jdbc/TestDB")
+    @Resource(lookup = "Java:/MySqlDS")
     private DataSource ds;
+
+    @PersistenceUnit(name = "ejemplo")
+    private EntityManagerFactory emf;
 
     @Produces
     @RequestScoped
@@ -47,7 +51,7 @@ public class ProducerResources {
     @Produces
     @RequestScoped
     private EntityManager beanEntityManager() {
-        return JpaUtil.getEntityManager();
+        return emf.createEntityManager();
     }
 
     public void closeEntityManager(@Disposes EntityManager em) {
